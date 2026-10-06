@@ -12,6 +12,7 @@ settings:
     ARCHS: arm64 x86_64
     GENERATE_INFOPLIST_FILE: YES
     INFOPLIST_KEY_CFBundleDisplayName: Mac Guardian
+    ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     CODE_SIGN_STYLE: Automatic
     ENABLE_HARDENED_RUNTIME: YES
 targets:
@@ -22,6 +23,7 @@ targets:
       - path: MacGuardianApp
     resources:
       - path: MacGuardianApp/Resources/Localizable.xcstrings
+      - path: MacGuardianApp/Resources/Assets.xcassets
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.cynaxia.macguardian

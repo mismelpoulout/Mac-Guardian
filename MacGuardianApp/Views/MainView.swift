@@ -17,6 +17,21 @@ struct MainView: View {
                 }
                 .listStyle(.sidebar)
 
+                HStack(spacing: 10) {
+                    Image("MacGuardianLogo")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 42, height: 42)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Mac Guardian").font(.headline)
+                        Text("by Cynaxia").font(.caption).foregroundStyle(.secondary)
+                    }
+                    Spacer(minLength: 0)
+                }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 10)
+
                 Divider()
                 languagePicker
                     .padding(.horizontal, 12)
@@ -27,9 +42,30 @@ struct MainView: View {
             Group {
                 switch selection ?? .dashboard {
                 case .dashboard:
-                    DashboardView()
-                case let item:
-                    ModulePlaceholderView(item: item)
+                    DashboardView(onSmartScan: { selection = .cleanup })
+                case .storage:
+                    FolderAnalysisView(mode: .folderUsage)
+                case .largeFiles:
+                    FolderAnalysisView(mode: .largeFiles(minimumBytes: 100 * 1024 * 1024))
+                case .cleanup:
+                    FolderAnalysisView(
+                        mode: .folderUsage,
+                        title: "Cleanup Review",
+                        explanation: "Review the contents of your user cache. This view analyzes files only; it does not delete them.",
+                        actionTitle: "Analyze User Caches",
+                        initialFolder: FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Caches", isDirectory: true),
+                        autoStartInitialFolder: true
+                    )
+                case .developerTools:
+                    DeveloperStorageView()
+                case .applications:
+                    InstalledApplicationsView()
+                case .security:
+                    PersistenceAuditView()
+                case .privacy:
+                    PrivacyAuditView()
+                case .performance:
+                    PerformanceView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -49,17 +85,5 @@ struct MainView: View {
         }
         .pickerStyle(.menu)
         .frame(maxWidth: .infinity, alignment: .leading)
-    }
-}
-
-private struct ModulePlaceholderView: View {
-    let item: NavigationItem
-
-    var body: some View {
-        ContentUnavailableView(
-            item.title,
-            systemImage: item.symbol,
-            description: Text("This module is planned for a later development phase.")
-        )
     }
 }

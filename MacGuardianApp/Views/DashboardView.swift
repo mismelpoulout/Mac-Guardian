@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct DashboardView: View {
+    var onSmartScan: () -> Void = {}
     @State private var model = DashboardViewModel()
     @Environment(\.locale) private var locale
 
@@ -37,24 +38,36 @@ struct DashboardView: View {
     }
 
     private var header: some View {
-        HStack(alignment: .top) {
-            VStack(alignment: .leading, spacing: 6) {
-                Text("MAC GUARDIAN")
-                    .font(.caption.weight(.bold))
-                    .tracking(2)
-                    .foregroundStyle(.orange)
-                Text("System overview")
-                    .font(.largeTitle.weight(.semibold))
-                Text("A clear view of this Mac, with no estimated values.")
+        VStack(alignment: .leading, spacing: 18) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("MAC GUARDIAN")
+                        .font(.caption.weight(.bold))
+                        .tracking(2)
+                        .foregroundStyle(.orange)
+                    Text("System overview")
+                        .font(.largeTitle.weight(.semibold))
+                    Text("A clear view of this Mac, with no estimated values.")
+                        .foregroundStyle(.secondary)
+                }
+                Spacer()
+                Button {
+                    Task { await model.refresh() }
+                } label: {
+                    Label("Refresh", systemImage: "arrow.clockwise")
+                }
+                .disabled(model.isLoading)
+            }
+
+            HStack {
+                Button(action: onSmartScan) {
+                    Label("Smart Scan", systemImage: "sparkles")
+                }
+                .buttonStyle(.borderedProminent)
+                Text("Analyze user caches without deleting files.")
+                    .font(.callout)
                     .foregroundStyle(.secondary)
             }
-            Spacer()
-            Button {
-                Task { await model.refresh() }
-            } label: {
-                Label("Refresh", systemImage: "arrow.clockwise")
-            }
-            .disabled(model.isLoading)
         }
     }
 

@@ -7,17 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		209C0F2C8A5E1D4B94776322 /* InstalledApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098B74F59163D3E54A73CAC7 /* InstalledApplication.swift */; };
 		21CB7E8F9E7953103B291230 /* SystemOverviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F4605D843B285446506B44 /* SystemOverviewProvider.swift */; };
+		2A957EA1ED253F410560D7E4 /* PersistenceDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3674766AA78F5B732627799 /* PersistenceDefinition.swift */; };
 		3E7823BA3B12F834D0C59FA5 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD275B9B04F6A536982496 /* NavigationItem.swift */; };
+		3F13D8BD8D177E21FC157083 /* FolderScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB3820AAF2461D64D0F8B45 /* FolderScanViewModel.swift */; };
+		3FAF71DA7931E1FD1583C648 /* DeveloperStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6E40F167608FF8206529F6 /* DeveloperStorageView.swift */; };
+		64702D557A43BAA5EE9261CA /* FolderScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E45FC800F779F965E188 /* FolderScanner.swift */; };
 		6FCA660C58BB2A0FE72EB189 /* SystemOverviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00B61CE8000683216E739A /* SystemOverviewTests.swift */; };
 		749F0552E3924F40CCF99827 /* MacGuardianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460C217546FFAAC3CE3D88F /* MacGuardianApp.swift */; };
+		8168D3339C2AE0FD61100782 /* SystemUtilityViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D201E600C921A22992E26D /* SystemUtilityViews.swift */; };
+		82968F69A1E5E17B0CCA535D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0696BD35AD9B4C65098110B /* Assets.xcassets */; };
 		86FC22C4FADACA8B978AB573 /* SystemOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F88EAC404009F647D41938 /* SystemOverview.swift */; };
 		888F99016492F9125746ABA2 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546321519C25C46614D56F4 /* DashboardViewModel.swift */; };
+		913B0FC9AADC6EBB653DDF96 /* InstalledApplicationScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850E426C260A1FC078925C9 /* InstalledApplicationScanner.swift */; };
+		A005FD99DD5FAE9A78EE6CAD /* FolderScanReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4B96D1D937B828D0E9B8A /* FolderScanReport.swift */; };
+		B3034EC6B64BB9C6304D7437 /* PersistenceAuditScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F019AD7E9ACC8B113AC1717 /* PersistenceAuditScanner.swift */; };
 		B48153BCC1FF7268662CBCDE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F094699554712FBCC863C /* MainView.swift */; };
 		CADE0A8283004CE06499D33C /* MacGuardianError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CDB039913F1C4648CB956C /* MacGuardianError.swift */; };
 		D713EF29A5556B87C82FF378 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 38F4882DD11EF0595EC9CAB1 /* Localizable.xcstrings */; };
 		DB299E3FAA701F3B8142E816 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8247218873F833F8B613A8D /* DashboardView.swift */; };
+		DCB8EC792DE4E610D429436C /* DeveloperStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E6A5C3DF1824D603556BAB /* DeveloperStorageViewModel.swift */; };
+		E519DA03C9277FA78F083D32 /* InstalledApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5690809FC08C2F8DF5FD552D /* InstalledApplicationsView.swift */; };
 		E87C3C8EE62EDFA107E22446 /* GuardianLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA158DD6525EA44FDDE1AB5 /* GuardianLogger.swift */; };
+		FC6EFB94F2F525CDC853484D /* FolderAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4F4846124B7B59B66FEFA /* FolderAnalysisView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,18 +45,31 @@
 
 /* Begin PBXFileReference section */
 		00CD275B9B04F6A536982496 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
+		098B74F59163D3E54A73CAC7 /* InstalledApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledApplication.swift; sourceTree = "<group>"; };
 		38F4882DD11EF0595EC9CAB1 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		4A00B61CE8000683216E739A /* SystemOverviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemOverviewTests.swift; sourceTree = "<group>"; };
+		4F019AD7E9ACC8B113AC1717 /* PersistenceAuditScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceAuditScanner.swift; sourceTree = "<group>"; };
+		52E6E45FC800F779F965E188 /* FolderScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderScanner.swift; sourceTree = "<group>"; };
+		5690809FC08C2F8DF5FD552D /* InstalledApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledApplicationsView.swift; sourceTree = "<group>"; };
 		59C95B766998494F080E79E3 /* MacGuardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacGuardian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6546321519C25C46614D56F4 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		70F88EAC404009F647D41938 /* SystemOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemOverview.swift; sourceTree = "<group>"; };
+		75F4B96D1D937B828D0E9B8A /* FolderScanReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderScanReport.swift; sourceTree = "<group>"; };
+		89A4F4846124B7B59B66FEFA /* FolderAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderAnalysisView.swift; sourceTree = "<group>"; };
+		8A6E40F167608FF8206529F6 /* DeveloperStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperStorageView.swift; sourceTree = "<group>"; };
 		9460C217546FFAAC3CE3D88F /* MacGuardianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacGuardianApp.swift; sourceTree = "<group>"; };
 		94CDB039913F1C4648CB956C /* MacGuardianError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacGuardianError.swift; sourceTree = "<group>"; };
 		9E00131DCC2E41FE5A15F3A0 /* MacGuardianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacGuardianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA158DD6525EA44FDDE1AB5 /* GuardianLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianLogger.swift; sourceTree = "<group>"; };
+		B0696BD35AD9B4C65098110B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3674766AA78F5B732627799 /* PersistenceDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceDefinition.swift; sourceTree = "<group>"; };
+		C7E6A5C3DF1824D603556BAB /* DeveloperStorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperStorageViewModel.swift; sourceTree = "<group>"; };
 		D8247218873F833F8B613A8D /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		DCB3820AAF2461D64D0F8B45 /* FolderScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderScanViewModel.swift; sourceTree = "<group>"; };
 		E3F4605D843B285446506B44 /* SystemOverviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemOverviewProvider.swift; sourceTree = "<group>"; };
 		E51F094699554712FBCC863C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F0D201E600C921A22992E26D /* SystemUtilityViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUtilityViews.swift; sourceTree = "<group>"; };
+		F850E426C260A1FC078925C9 /* InstalledApplicationScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledApplicationScanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -58,6 +84,9 @@
 		0ADDD06C81B932E65F03A5FD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				52E6E45FC800F779F965E188 /* FolderScanner.swift */,
+				F850E426C260A1FC078925C9 /* InstalledApplicationScanner.swift */,
+				4F019AD7E9ACC8B113AC1717 /* PersistenceAuditScanner.swift */,
 				E3F4605D843B285446506B44 /* SystemOverviewProvider.swift */,
 			);
 			path = Core;
@@ -99,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				6546321519C25C46614D56F4 /* DashboardViewModel.swift */,
+				C7E6A5C3DF1824D603556BAB /* DeveloperStorageViewModel.swift */,
+				DCB3820AAF2461D64D0F8B45 /* FolderScanViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -133,7 +164,11 @@
 			isa = PBXGroup;
 			children = (
 				D8247218873F833F8B613A8D /* DashboardView.swift */,
+				8A6E40F167608FF8206529F6 /* DeveloperStorageView.swift */,
+				89A4F4846124B7B59B66FEFA /* FolderAnalysisView.swift */,
+				5690809FC08C2F8DF5FD552D /* InstalledApplicationsView.swift */,
 				E51F094699554712FBCC863C /* MainView.swift */,
+				F0D201E600C921A22992E26D /* SystemUtilityViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,7 +184,10 @@
 		CFDAAEC2276D03194C6FF385 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				75F4B96D1D937B828D0E9B8A /* FolderScanReport.swift */,
+				098B74F59163D3E54A73CAC7 /* InstalledApplication.swift */,
 				94CDB039913F1C4648CB956C /* MacGuardianError.swift */,
+				B3674766AA78F5B732627799 /* PersistenceDefinition.swift */,
 				70F88EAC404009F647D41938 /* SystemOverview.swift */,
 			);
 			path = Domain;
@@ -158,6 +196,7 @@
 		E1027E869D17D1FFC19D64E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B0696BD35AD9B4C65098110B /* Assets.xcassets */,
 				38F4882DD11EF0595EC9CAB1 /* Localizable.xcstrings */,
 			);
 			path = Resources;
@@ -248,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82968F69A1E5E17B0CCA535D /* Assets.xcassets in Resources */,
 				D713EF29A5556B87C82FF378 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,13 +301,25 @@
 			files = (
 				DB299E3FAA701F3B8142E816 /* DashboardView.swift in Sources */,
 				888F99016492F9125746ABA2 /* DashboardViewModel.swift in Sources */,
+				3FAF71DA7931E1FD1583C648 /* DeveloperStorageView.swift in Sources */,
+				DCB8EC792DE4E610D429436C /* DeveloperStorageViewModel.swift in Sources */,
+				FC6EFB94F2F525CDC853484D /* FolderAnalysisView.swift in Sources */,
+				A005FD99DD5FAE9A78EE6CAD /* FolderScanReport.swift in Sources */,
+				3F13D8BD8D177E21FC157083 /* FolderScanViewModel.swift in Sources */,
+				64702D557A43BAA5EE9261CA /* FolderScanner.swift in Sources */,
 				E87C3C8EE62EDFA107E22446 /* GuardianLogger.swift in Sources */,
+				209C0F2C8A5E1D4B94776322 /* InstalledApplication.swift in Sources */,
+				913B0FC9AADC6EBB653DDF96 /* InstalledApplicationScanner.swift in Sources */,
+				E519DA03C9277FA78F083D32 /* InstalledApplicationsView.swift in Sources */,
 				749F0552E3924F40CCF99827 /* MacGuardianApp.swift in Sources */,
 				CADE0A8283004CE06499D33C /* MacGuardianError.swift in Sources */,
 				B48153BCC1FF7268662CBCDE /* MainView.swift in Sources */,
 				3E7823BA3B12F834D0C59FA5 /* NavigationItem.swift in Sources */,
+				B3034EC6B64BB9C6304D7437 /* PersistenceAuditScanner.swift in Sources */,
+				2A957EA1ED253F410560D7E4 /* PersistenceDefinition.swift in Sources */,
 				86FC22C4FADACA8B978AB573 /* SystemOverview.swift in Sources */,
 				21CB7E8F9E7953103B291230 /* SystemOverviewProvider.swift in Sources */,
+				8168D3339C2AE0FD61100782 /* SystemUtilityViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +347,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "arm64 x86_64";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -388,6 +441,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "arm64 x86_64";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
