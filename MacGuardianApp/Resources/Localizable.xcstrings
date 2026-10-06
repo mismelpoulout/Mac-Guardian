@@ -1,0 +1,312 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ available of %@" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "%@ available of %@" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "%@ disponibles de %@" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "空き %@ / 全体 %@" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "%@ disponíveis de %@" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "可用 %@ / 共 %@" } }
+      }
+    },
+    "A clear view of this Mac, with no estimated values." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "A clear view of this Mac, with no estimated values." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Una vista clara de este Mac, sin valores estimados." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "推定値を使わず、このMacの状態を表示します。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Uma visão clara deste Mac, sem valores estimados." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "清晰查看这台 Mac 的状态，不显示估算值。" } }
+      }
+    },
+    "Applications" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Applications" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Aplicaciones" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アプリケーション" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Aplicativos" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "应用程序" } }
+      }
+    },
+    "Cleanup" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cleanup" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Limpieza" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "クリーンアップ" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Limpeza" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "清理" } }
+      }
+    },
+    "Dashboard" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Dashboard" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Panel" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ダッシュボード" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Painel" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "仪表板" } }
+      }
+    },
+    "Developer Tools" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Developer Tools" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Herramientas para desarrolladores" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "開発者ツール" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Ferramentas de desenvolvimento" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "开发者工具" } }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Language" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Idioma" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "言語" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Idioma" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "语言" } }
+      }
+    },
+    "MAC GUARDIAN" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "MAC GUARDIAN" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "MAC GUARDIAN" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "MAC GUARDIAN" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "MAC GUARDIAN" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "MAC GUARDIAN" } }
+      }
+    },
+    "Metrics shown here come from local macOS APIs. Scanner-based health and recovery estimates will appear in later phases." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Metrics shown here come from local macOS APIs. Scanner-based health and recovery estimates will appear in later phases." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Las métricas provienen de APIs locales de macOS. El análisis de salud y las estimaciones de recuperación llegarán en fases posteriores." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ここに表示される情報はmacOSのローカルAPIから取得しています。スキャンによる状態分析と回復容量の推定は今後の開発段階で追加されます。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "As métricas exibidas vêm de APIs locais do macOS. A análise de integridade e as estimativas de recuperação serão adicionadas em fases futuras." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "此处显示的数据来自 macOS 本地 API。系统健康扫描和可回收空间估算将在后续阶段推出。" } }
+      }
+    },
+    "Performance" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Performance" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Rendimiento" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "パフォーマンス" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Desempenho" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "性能" } }
+      }
+    },
+    "Privacy" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Privacy" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Privacidad" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "プライバシー" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Privacidade" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "隐私" } }
+      }
+    },
+    "Refresh" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Refresh" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Actualizar" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "更新" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Atualizar" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "刷新" } }
+      }
+    },
+    "Reading system information…" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Reading system information…" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Leyendo información del sistema…" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "システム情報を読み込んでいます…" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Lendo informações do sistema…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在读取系统信息…" } }
+      }
+    },
+    "Security" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Security" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Seguridad" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "セキュリティ" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Segurança" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "安全" } }
+      }
+    },
+    "Startup storage" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Startup storage" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Almacenamiento del disco de arranque" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "起動ディスクのストレージ" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Armazenamento do disco de inicialização" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "启动磁盘存储空间" } }
+      }
+    },
+    "Startup volume" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Startup volume" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Volumen de arranque" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "起動ボリューム" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Volume de inicialização" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "启动宗卷" } }
+      }
+    },
+    "Storage" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Storage" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Almacenamiento" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ストレージ" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Armazenamento" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "存储" } }
+      }
+    },
+    "System overview" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "System overview" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Resumen del sistema" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "システム概要" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Visão geral do sistema" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "系统概览" } }
+      }
+    },
+    "System uptime" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "System uptime" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Tiempo activo del sistema" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "システム稼働時間" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Tempo de atividade do sistema" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "系统运行时间" } }
+      }
+    },
+    "This module is planned for a later development phase." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "This module is planned for a later development phase." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Este módulo está previsto para una fase posterior." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "このモジュールは今後の開発段階で追加予定です。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Este módulo está previsto para uma fase futura." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "此模块计划在后续开发阶段推出。" } }
+      }
+    },
+    "error.cleanupFailed" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cleanup could not be completed." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No se pudo completar la limpieza." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "クリーンアップを完了できませんでした。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Não foi possível concluir a limpeza." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无法完成清理。" } }
+      }
+    },
+    "error.helperUnavailable" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "The required macOS service is unavailable." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "El servicio de macOS necesario no está disponible." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "必要なmacOSサービスを利用できません。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O serviço necessário do macOS está indisponível." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "所需的 macOS 服务不可用。" } }
+      }
+    },
+    "error.invalidPath" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "The selected location is invalid." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "La ubicación seleccionada no es válida." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "選択した場所は無効です。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O local selecionado é inválido." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "所选位置无效。" } }
+      }
+    },
+    "error.operationNotAllowed" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "This operation is not allowed by Mac Guardian's safety policy." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "La política de seguridad de Mac Guardian no permite esta operación." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "Mac Guardianの安全ポリシーにより、この操作は許可されていません。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "A política de segurança do Mac Guardian não permite esta operação." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Mac Guardian 的安全策略不允许此操作。" } }
+      }
+    },
+    "error.permissionDenied" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Permission is required to inspect this location." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Se necesita permiso para analizar esta ubicación." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "この場所を調べるにはアクセス許可が必要です。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "É necessária permissão para analisar este local." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "需要获得权限才能检查此位置。" } }
+      }
+    },
+    "error.protectedLocation" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "macOS protects this location from access." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "macOS protege esta ubicación contra el acceso." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "この場所へのアクセスはmacOSによって保護されています。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O macOS protege este local contra acesso." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "macOS 会保护此位置，禁止访问。" } }
+      }
+    },
+    "error.scanFailed" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "The scan could not be completed." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No se pudo completar el análisis." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "スキャンを完了できませんでした。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Não foi possível concluir a análise." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无法完成扫描。" } }
+      }
+    },
+    "error.systemInformationUnavailable" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "System information is temporarily unavailable." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "La información del sistema no está disponible temporalmente." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "システム情報は一時的に利用できません。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "As informações do sistema estão temporariamente indisponíveis." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "系统信息暂时不可用。" } }
+      }
+    },
+    "macOS did not provide capacity values." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "macOS did not provide capacity values." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "macOS no proporcionó los datos de capacidad." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "macOSから容量情報を取得できませんでした。" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O macOS não forneceu os dados de capacidade." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "macOS 未提供容量信息。" } }
+      }
+    },
+    "Physical memory" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Physical memory" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Memoria física" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "物理メモリ" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Memória física" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "物理内存" } }
+      }
+    },
+    "Installed memory capacity" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Installed memory capacity" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Memoria instalada" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "搭載メモリ容量" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Capacidade de memória instalada" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已安装内存容量" } }
+      }
+    },
+    "Mounted system volume" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mounted system volume" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Volumen del sistema montado" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "マウント済みシステムボリューム" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Volume do sistema montado" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已装载的系统宗卷" } }
+      }
+    },
+    "Since the last restart" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Since the last restart" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Desde el último reinicio" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "前回の再起動から" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Desde a última reinicialização" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "自上次重新启动以来" } }
+      }
+    },
+    "Unavailable" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Unavailable" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No disponible" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "利用できません" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Indisponível" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "不可用" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}

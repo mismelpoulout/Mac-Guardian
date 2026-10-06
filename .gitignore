@@ -1,0 +1,7 @@
+.DS_Store
+DerivedData/
+build/
+
+# Local research attachments, not part of the Mac Guardian source tree.
+/README 2.md
+/SECURITY.md
