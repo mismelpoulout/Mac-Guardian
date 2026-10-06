@@ -855,6 +855,195 @@
         "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Não foi possível ler as definições de inicialização. Verifique as permissões das pastas e tente novamente." } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无法读取启动定义。请检查文件夹权限后重试。" } }
       }
+    },
+    "Review direct items in your user cache. Select an item to move it to Trash; close its app first. Nothing is permanently erased by Mac Guardian." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Review direct items in your user cache. Select an item to move it to Trash; close its app first. Nothing is permanently erased by Mac Guardian." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Revisa los elementos de la caché de tu usuario. Puedes enviar un elemento a la Papelera; cierra antes la app que lo usa. Mac Guardian no elimina nada permanentemente." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Revise os itens do cache do usuário. Você pode enviar um item para o Lixo; feche antes o app que o utiliza. O Mac Guardian não apaga nada permanentemente." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "查看用户缓存中的项目。可选择将项目移到废纸篓；请先关闭正在使用它的应用。Mac Guardian 不会永久删除任何内容。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ユーザーキャッシュ内の項目を確認できます。項目をゴミ箱に移動する前に、使用中のアプリを終了してください。Mac Guardian が完全削除することはありません。" } }
+      }
+    },
+    "Analyzing user caches…" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Analyzing user caches…" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Analizando cachés del usuario…" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Analisando caches do usuário…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在分析用户缓存…" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ユーザーキャッシュを分析中…" } }
+      }
+    },
+    "Cache items" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cache items" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Elementos de caché" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Itens de cache" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "缓存项目" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "キャッシュ項目" } }
+      }
+    },
+    "No cache items found" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No cache items found" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No se encontraron elementos de caché" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Nenhum item de cache encontrado" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "未找到缓存项目" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "キャッシュ項目が見つかりません" } }
+      }
+    },
+    "Move to Trash" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Move to Trash" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Mover a la Papelera" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Mover para o Lixo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "移到废纸篓" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ゴミ箱に移動" } }
+      }
+    },
+    "Analyze your user caches" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Analyze your user caches" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Analiza las cachés de tu usuario" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Analise os caches do usuário" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "分析用户缓存" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ユーザーキャッシュを分析" } }
+      }
+    },
+    "Mac Guardian lists cache items and their allocated size before you choose whether to move any item to Trash." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mac Guardian lists cache items and their allocated size before you choose whether to move any item to Trash." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Mac Guardian muestra los elementos de caché y su tamaño asignado para que decidas si quieres mover alguno a la Papelera." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O Mac Guardian lista os itens de cache e o espaço alocado para você decidir se deseja mover algum para o Lixo." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Mac Guardian 会列出缓存项目及其已分配空间，供你决定是否将其移到废纸篓。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "Mac Guardian はキャッシュ項目と割り当てサイズを表示し、ゴミ箱に移動するかどうかを選べます。" } }
+      }
+    },
+    "Move selected cache item to Trash?" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Move selected cache item to Trash?" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "¿Mover el elemento de caché seleccionado a la Papelera?" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Mover o item de cache selecionado para o Lixo?" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "将所选缓存项目移到废纸篓？" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "選択したキャッシュ項目をゴミ箱に移動しますか？" } }
+      }
+    },
+    "The selected cache item will be moved to Trash. Close its app first; you can restore it from Trash." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "The selected cache item will be moved to Trash. Close its app first; you can restore it from Trash." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "El elemento seleccionado se moverá a la Papelera. Cierra primero la app que lo usa; puedes restaurarlo desde la Papelera." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O item selecionado será movido para o Lixo. Feche primeiro o app que o utiliza; é possível restaurá-lo depois." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "所选项目将移到废纸篓。请先关闭正在使用它的应用；之后可以从废纸篓恢复。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "選択した項目をゴミ箱に移動します。先に使用中のアプリを終了してください。後でゴミ箱から戻せます。" } }
+      }
+    },
+    "Could not move item to Trash" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Could not move item to Trash" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No se pudo mover el elemento a la Papelera" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Não foi possível mover o item para o Lixo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无法将项目移到废纸篓" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "項目をゴミ箱に移動できませんでした" } }
+      }
+    },
+    "Moved to Trash" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Moved to Trash" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Movido a la Papelera" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Movido para o Lixo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已移到废纸篓" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ゴミ箱に移動しました" } }
+      }
+    },
+    "The item was moved to Trash. The cache list will update after you dismiss this message." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "The item was moved to Trash. The cache list will update after you dismiss this message." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "El elemento se movió a la Papelera. La lista se actualizará al cerrar este mensaje." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O item foi movido para o Lixo. A lista será atualizada quando você fechar esta mensagem." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "项目已移到废纸篓。关闭此消息后将更新缓存列表。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "項目をゴミ箱に移動しました。このメッセージを閉じると一覧が更新されます。" } }
+      }
+    },
+    "Move Application to Trash" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Move Application to Trash" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Mover aplicación a la Papelera" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Mover aplicativo para o Lixo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "将应用移到废纸篓" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アプリをゴミ箱に移動" } }
+      }
+    },
+    "Uninstall moves only the selected app bundle to Trash. Related support files are left untouched." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Uninstall moves only the selected app bundle to Trash. Related support files are left untouched." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "La desinstalación mueve solo la app seleccionada a la Papelera. Los archivos de soporte relacionados no se modifican." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "A desinstalação move apenas o app selecionado para o Lixo. Os arquivos de suporte relacionados não são alterados." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "卸载操作只会将所选应用移到废纸篓，不会更改相关支持文件。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アンインストールでは選択したアプリ本体のみをゴミ箱に移動し、関連するサポートファイルは残します。" } }
+      }
+    },
+    "Move this application to Trash?" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Move this application to Trash?" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "¿Mover esta aplicación a la Papelera?" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Mover este aplicativo para o Lixo?" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "将此应用移到废纸篓？" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "このアプリをゴミ箱に移動しますか？" } }
+      }
+    },
+    "This app bundle will be moved to Trash. Its support files and documents will remain in place." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "This app bundle will be moved to Trash. Its support files and documents will remain in place." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "La app se moverá a la Papelera. Sus archivos de soporte y documentos permanecerán en su ubicación." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O app será movido para o Lixo. Os arquivos de suporte e documentos permanecerão no local." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "此应用将移到废纸篓，其支持文件和文档将保留在原处。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アプリ本体をゴミ箱に移動します。サポートファイルや書類はそのまま残ります。" } }
+      }
+    },
+    "Could not move application to Trash" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Could not move application to Trash" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No se pudo mover la aplicación a la Papelera" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Não foi possível mover o aplicativo para o Lixo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无法将应用移到废纸篓" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アプリをゴミ箱に移動できませんでした" } }
+      }
+    },
+    "Application moved to Trash" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Application moved to Trash" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Aplicación movida a la Papelera" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Aplicativo movido para o Lixo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "应用已移到废纸篓" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アプリをゴミ箱に移動しました" } }
+      }
+    },
+    "The app bundle was moved to Trash. Related support files were left untouched." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "The app bundle was moved to Trash. Related support files were left untouched." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "La app se movió a la Papelera. Los archivos de soporte relacionados permanecen intactos." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O app foi movido para o Lixo. Os arquivos de suporte relacionados permanecem intactos." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "应用已移到废纸篓，相关支持文件保持不变。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アプリ本体をゴミ箱に移動しました。関連するサポートファイルはそのままです。" } }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cancel" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cancelar" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Cancelar" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "取消" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "キャンセル" } }
+      }
+    },
+    "Unknown error" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Unknown error" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Error desconocido" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Erro desconhecido" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "未知错误" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "不明なエラー" } }
+      }
     }
   },
   "version" : "1.0"

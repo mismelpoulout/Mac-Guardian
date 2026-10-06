@@ -48,14 +48,7 @@ struct MainView: View {
                 case .largeFiles:
                     FolderAnalysisView(mode: .largeFiles(minimumBytes: 100 * 1024 * 1024))
                 case .cleanup:
-                    FolderAnalysisView(
-                        mode: .folderUsage,
-                        title: "Cleanup Review",
-                        explanation: "Review the contents of your user cache. This view analyzes files only; it does not delete them.",
-                        actionTitle: "Analyze User Caches",
-                        initialFolder: FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Caches", isDirectory: true),
-                        autoStartInitialFolder: true
-                    )
+                    CleanupView()
                 case .developerTools:
                     DeveloperStorageView()
                 case .applications:

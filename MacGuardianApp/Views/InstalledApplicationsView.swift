@@ -5,6 +5,10 @@ struct InstalledApplicationsView: View {
     @State private var applications: [InstalledApplication] = []
     @State private var isLoading = false
     @State private var searchText = ""
+    @State private var pendingUninstall: InstalledApplication?
+    @State private var showUninstallConfirmation = false
+    @State private var alertTitleKey: String?
+    @State private var alertMessage = ""
 
     private var visibleApplications: [InstalledApplication] {
         guard !searchText.isEmpty else { return applications }
@@ -71,17 +75,43 @@ struct InstalledApplicationsView: View {
                         }
                         .labelStyle(.iconOnly)
                         .help("Show in Finder")
+                        if TrashService.canMoveAppToTrash(app.location) {
+                            Button(role: .destructive) {
+                                pendingUninstall = app
+                                showUninstallConfirmation = true
+                            } label: {
+                                Label("Move Application to Trash", systemImage: "trash")
+                            }
+                            .labelStyle(.iconOnly)
+                            .help("Move Application to Trash")
+                        }
                     }
                     .padding(.vertical, 4)
                 }
                 .listStyle(.inset(alternatesRowBackgrounds: true))
             }
-            Label("Application removal plans are not available yet. This inventory does not change apps.", systemImage: "info.circle")
+            Label("Uninstall moves only the selected app bundle to Trash. Related support files are left untouched.", systemImage: "info.circle")
                 .font(.callout)
                 .foregroundStyle(.secondary)
         }
         .padding(30)
         .task { await refresh() }
+        .confirmationDialog("Move this application to Trash?", isPresented: $showUninstallConfirmation, titleVisibility: .visible) {
+            Button("Move Application to Trash", role: .destructive) { movePendingAppToTrash() }
+            Button("Cancel", role: .cancel) { pendingUninstall = nil }
+        } message: {
+            if pendingUninstall != nil {
+                Text("This app bundle will be moved to Trash. Its support files and documents will remain in place.")
+            }
+        }
+        .alert(LocalizedStringKey(alertTitleKey ?? ""), isPresented: Binding(
+            get: { alertTitleKey != nil },
+            set: { if !$0 { alertTitleKey = nil } }
+        )) {
+            Button("OK", role: .cancel) { alertTitleKey = nil }
+        } message: {
+            Text(alertMessage)
+        }
     }
 
     @MainActor
@@ -90,5 +120,20 @@ struct InstalledApplicationsView: View {
         isLoading = true
         applications = await InstalledApplicationScanner().scan()
         isLoading = false
+    }
+
+    private func movePendingAppToTrash() {
+        guard let pendingUninstall else { return }
+        do {
+            try TrashService.moveAppToTrash(pendingUninstall.location)
+            alertTitleKey = "Application moved to Trash"
+            alertMessage = String(localized: "The app bundle was moved to Trash. Related support files were left untouched.")
+            applications.removeAll { $0.id == pendingUninstall.id }
+            self.pendingUninstall = nil
+        } catch {
+            alertTitleKey = "Could not move application to Trash"
+            alertMessage = error.localizedDescription
+            self.pendingUninstall = nil
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 Native macOS maintenance and diagnostics software by Cynaxia.
 
-Mac Guardian is local-first and privacy-first. The current app provides a system overview, cancellable folder-size and large-file scans, a developer-cache inventory, installed-app inventory, and a startup-item (`.plist`) audit. The screens open relevant macOS utilities where useful. These features inspect data only: they do not delete files, uninstall apps, or modify startup settings. Cleanup plans, uninstall workflows, and privileged operations are still planned work.
+Mac Guardian is local-first and privacy-first. The current app provides a system overview, cancellable folder-size and large-file scans, a developer-cache inventory, installed-app inventory, and a startup-item (`.plist`) audit. The Cleanup section lets the user review direct children of their own cache folder and explicitly move selected items to Trash. The Applications section can move eligible app bundles from `/Applications` or `~/Applications` to Trash; related support files are left untouched. Startup settings are read-only, and protected system apps cannot be moved. Privileged operations and deeper uninstall analysis are still planned work.
 
 The interface supports Spanish by default, English, Brazilian Portuguese, Simplified Chinese, and Japanese. Its language preference is stored on this Mac. The app uses the supplied `logo.jpg` for its sidebar branding and application icon.
 
