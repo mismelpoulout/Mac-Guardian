@@ -94,7 +94,9 @@ struct DashboardView: View {
             )
             MetricCard(
                 title: "Startup volume",
-                value: overview.volumeName,
+                value: overview.volumeName == "Startup Volume"
+                    ? String(localized: "Startup Volume", locale: locale)
+                    : overview.volumeName,
                 detail: "Mounted system volume",
                 symbol: "externaldrive"
             )

@@ -18,4 +18,5 @@ struct FolderScanReport: Sendable {
     let totalAllocatedBytes: Int64
     let filesScanned: Int
     let skippedItems: Int
+    let resultsTruncated: Bool
 }

@@ -42,17 +42,28 @@ final class DeveloperStorageViewModel {
                 for location in Self.knownLocations where FileManager.default.fileExists(atPath: location.url.path) {
                     try Task.checkCancellation()
                     self.currentLocationKey = location.nameKey
-                    let report = try await self.scanner.scan(rootURL: location.url, mode: .folderUsage) { [weak self] count in
-                        Task { @MainActor [weak self] in self?.filesScanned = count }
+                    let completedFileCount = self.filesScanned
+                    do {
+                        let report = try await self.scanner.scan(rootURL: location.url, mode: .folderUsage) { [weak self] count in
+                            Task { @MainActor [weak self] in
+                                guard let self, self.currentLocationKey == location.nameKey else { return }
+                                self.filesScanned = max(self.filesScanned, completedFileCount + count)
+                            }
+                        }
+                        self.filesScanned = completedFileCount + report.filesScanned
+                        self.results.append(DeveloperStorageResult(
+                            id: location.url.path,
+                            nameKey: location.nameKey,
+                            location: location.url,
+                            allocatedBytes: report.totalAllocatedBytes,
+                            filesScanned: report.filesScanned,
+                            skippedItems: report.skippedItems
+                        ))
+                    } catch is CancellationError {
+                        throw CancellationError()
+                    } catch {
+                        self.errorMessageKey = "error.scanFailed"
                     }
-                    self.results.append(DeveloperStorageResult(
-                        id: location.url.path,
-                        nameKey: location.nameKey,
-                        location: location.url,
-                        allocatedBytes: report.totalAllocatedBytes,
-                        filesScanned: report.filesScanned,
-                        skippedItems: report.skippedItems
-                    ))
                 }
             } catch is CancellationError {
                 self.wasCancelled = true

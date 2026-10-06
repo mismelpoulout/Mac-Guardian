@@ -9,6 +9,7 @@ struct InstalledApplicationsView: View {
     @State private var showUninstallConfirmation = false
     @State private var alertTitleKey: String?
     @State private var alertMessage = ""
+    @Environment(\.locale) private var locale
 
     private var visibleApplications: [InstalledApplication] {
         guard !searchText.isEmpty else { return applications }
@@ -42,6 +43,9 @@ struct InstalledApplicationsView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if applications.isEmpty {
                 ContentUnavailableView("No applications found", systemImage: "app.dashed")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if visibleApplications.isEmpty {
+                ContentUnavailableView("No matching applications", systemImage: "magnifyingglass")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 List(visibleApplications) { app in
@@ -127,12 +131,24 @@ struct InstalledApplicationsView: View {
         do {
             try TrashService.moveAppToTrash(pendingUninstall.location)
             alertTitleKey = "Application moved to Trash"
-            alertMessage = String(localized: "The app bundle was moved to Trash. Related support files were left untouched.")
+            alertMessage = String(localized: "The app bundle was moved to Trash. Related support files were left untouched.", locale: locale)
             applications.removeAll { $0.id == pendingUninstall.id }
             self.pendingUninstall = nil
         } catch {
-            alertTitleKey = "Could not move application to Trash"
-            alertMessage = error.localizedDescription
+            switch error as? TrashServiceError {
+            case .appIsRunning:
+                alertTitleKey = "Quit the application first"
+                alertMessage = String(localized: "This application is still running. Quit it and try again.", locale: locale)
+            case .appOutsideSupportedFolder:
+                alertTitleKey = "Could not move application to Trash"
+                alertMessage = String(localized: "Only app bundles directly inside /Applications or ~/Applications can be moved.", locale: locale)
+            case .symbolicLinkNotSupported:
+                alertTitleKey = "Could not move application to Trash"
+                alertMessage = String(localized: "Mac Guardian cannot move symbolic links to Trash.", locale: locale)
+            default:
+                alertTitleKey = "Could not move application to Trash"
+                alertMessage = String(localized: "macOS could not move this item. Check permissions and try again.", locale: locale)
+            }
             self.pendingUninstall = nil
         }
     }

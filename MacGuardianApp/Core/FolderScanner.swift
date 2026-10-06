@@ -43,7 +43,9 @@ struct FolderScanner: Sendable {
 
         var skippedItems = 0
         var filesScanned = 0
+        var lastReportedFileCount = 0
         var totalBytes: Int64 = 0
+        var largeFilesFound = 0
         var folderTotals: [String: (url: URL, bytes: Int64)] = [:]
         var largestFiles: [ScannedFile] = []
         let enumerator = FileManager.default.enumerator(
@@ -89,6 +91,7 @@ struct FolderScanner: Sendable {
                     folderTotals[firstComponent] = total
                 case .largeFiles(let minimumBytes):
                     if bytes >= minimumBytes {
+                        largeFilesFound += 1
                         largestFiles.append(ScannedFile(
                             id: itemURL.path,
                             url: itemURL,
@@ -104,6 +107,7 @@ struct FolderScanner: Sendable {
 
                 if filesScanned.isMultiple(of: progressInterval) {
                     progress(filesScanned)
+                    lastReportedFileCount = filesScanned
                 }
             } catch is CancellationError {
                 throw CancellationError()
@@ -113,6 +117,9 @@ struct FolderScanner: Sendable {
         }
 
         try Task.checkCancellation()
+        if filesScanned != lastReportedFileCount {
+            progress(filesScanned)
+        }
         let files: [ScannedFile]
         switch mode {
         case .folderUsage:
@@ -120,7 +127,7 @@ struct FolderScanner: Sendable {
                 ScannedFile(id: name, url: value.url, allocatedBytes: value.bytes, modifiedAt: nil)
             }.sorted { $0.allocatedBytes > $1.allocatedBytes }
         case .largeFiles:
-            files = largestFiles.sorted { $0.allocatedBytes > $1.allocatedBytes }
+            files = Array(largestFiles.sorted { $0.allocatedBytes > $1.allocatedBytes }.prefix(resultLimit))
         }
 
         return FolderScanReport(
@@ -128,7 +135,8 @@ struct FolderScanner: Sendable {
             files: files,
             totalAllocatedBytes: totalBytes,
             filesScanned: filesScanned,
-            skippedItems: skippedItems
+            skippedItems: skippedItems,
+            resultsTruncated: largeFilesFound > resultLimit
         )
     }
 }

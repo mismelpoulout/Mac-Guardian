@@ -48,7 +48,7 @@ struct PerformanceView: View {
 
 struct PersistenceAuditView: View {
     @State private var definitions: [PersistenceDefinition] = []
-    @State private var errorMessageKey: String?
+    @State private var skippedItems = 0
     @State private var isLoading = false
 
     var body: some View {
@@ -68,10 +68,7 @@ struct PersistenceAuditView: View {
                 .disabled(isLoading)
             }
 
-            if let errorMessageKey {
-                Label(LocalizedStringKey(errorMessageKey), systemImage: "exclamationmark.triangle")
-                    .foregroundStyle(.orange)
-            } else if isLoading {
+            if isLoading {
                 ProgressView("Reading launch definitions…")
             } else if definitions.isEmpty {
                 ContentUnavailableView("No launch definitions found", systemImage: "checkmark.shield")
@@ -106,6 +103,11 @@ struct PersistenceAuditView: View {
                 }
                 .listStyle(.inset(alternatesRowBackgrounds: true))
             }
+            if skippedItems > 0 {
+                Label("Some launch files or folders could not be read; the inventory may be incomplete.", systemImage: "exclamationmark.triangle")
+                    .font(.callout)
+                    .foregroundStyle(.orange)
+            }
             Label("This inventory does not disable or remove any startup item.", systemImage: "info.circle")
                 .font(.callout)
                 .foregroundStyle(.secondary)
@@ -118,13 +120,9 @@ struct PersistenceAuditView: View {
     private func refresh() async {
         guard !isLoading else { return }
         isLoading = true
-        do {
-            definitions = try await PersistenceAuditScanner().scan()
-            errorMessageKey = nil
-        } catch {
-            definitions = []
-            errorMessageKey = "error.persistenceAuditFailed"
-        }
+        let report = await PersistenceAuditScanner().scan()
+        definitions = report.definitions
+        skippedItems = report.skippedItems
         isLoading = false
     }
 }

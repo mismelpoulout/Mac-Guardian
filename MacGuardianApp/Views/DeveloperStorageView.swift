@@ -45,6 +45,10 @@ struct DeveloperStorageView: View {
                 Label("Scan cancelled; completed folders remain listed.", systemImage: "checkmark.circle")
                     .foregroundStyle(.secondary)
             }
+            if model.results.contains(where: { $0.skippedItems > 0 }) {
+                Label("Some files could not be read; displayed sizes may be partial.", systemImage: "exclamationmark.triangle")
+                    .foregroundStyle(.orange)
+            }
 
             if !model.results.isEmpty {
                 List(model.results) { result in

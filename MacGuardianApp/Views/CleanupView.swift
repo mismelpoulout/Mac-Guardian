@@ -43,6 +43,11 @@ struct CleanupView: View {
             }
 
             if let report = model.report {
+                if report.skippedItems > 0 {
+                    Label("Some cache items could not be read; the displayed size may be incomplete.", systemImage: "exclamationmark.triangle")
+                        .font(.callout)
+                        .foregroundStyle(.orange)
+                }
                 HStack(spacing: 22) {
                     summary("Total allocated", report.totalAllocatedBytes.formatted(.byteCount(style: .file).locale(locale)))
                     summary("Cache items", report.files.count.formatted(.number.locale(locale)))
@@ -139,7 +144,14 @@ struct CleanupView: View {
             self.pendingItem = nil
         } catch {
             alertTitleKey = "Could not move item to Trash"
-            alertMessage = error.localizedDescription
+            switch error as? TrashServiceError {
+            case .cacheItemOutsideSupportedFolder:
+                alertMessage = String(localized: "Only direct items in your user cache can be moved.", locale: locale)
+            case .symbolicLinkNotSupported:
+                alertMessage = String(localized: "Mac Guardian cannot move symbolic links to Trash.", locale: locale)
+            default:
+                alertMessage = String(localized: "macOS could not move this item. Check permissions and try again.", locale: locale)
+            }
             self.pendingItem = nil
         }
     }

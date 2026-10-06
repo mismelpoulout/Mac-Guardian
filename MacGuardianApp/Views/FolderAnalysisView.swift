@@ -52,12 +52,27 @@ struct FolderAnalysisView: View {
                 }
                 if let report = model.report {
                     reportSummary(report)
+                    if report.skippedItems > 0 {
+                        Label("Some items could not be read; their sizes are excluded.", systemImage: "exclamationmark.triangle")
+                            .font(.callout)
+                            .foregroundStyle(.orange)
+                    }
+                    if report.resultsTruncated {
+                        Label("Showing the 300 largest matching files.", systemImage: "info.circle")
+                            .font(.callout)
+                            .foregroundStyle(.secondary)
+                    }
                     if !report.files.isEmpty {
                         TextField("Filter files", text: $searchText)
                             .textFieldStyle(.roundedBorder)
-                        LazyVStack(spacing: 8) {
-                            ForEach(visibleFiles) { file in
-                                fileRow(file)
+                        if visibleFiles.isEmpty {
+                            ContentUnavailableView("No files match your filter", systemImage: "magnifyingglass")
+                                .frame(maxWidth: .infinity, minHeight: 160)
+                        } else {
+                            LazyVStack(spacing: 8) {
+                                ForEach(visibleFiles) { file in
+                                    fileRow(file)
+                                }
                             }
                         }
                     } else {
@@ -141,15 +156,6 @@ struct FolderAnalysisView: View {
         .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(nsColor: .controlBackgroundColor), in: RoundedRectangle(cornerRadius: 14))
-        .overlay(alignment: .bottomLeading) {
-            if report.skippedItems > 0 {
-                Text("Some items could not be read; their sizes are excluded.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .padding(.horizontal, 18)
-                    .padding(.bottom, 4)
-            }
-        }
     }
 
     private func summaryValue(_ title: LocalizedStringKey, value: String) -> some View {

@@ -6,3 +6,8 @@ struct PersistenceDefinition: Identifiable, Sendable {
     let program: String
     let location: URL
 }
+
+struct PersistenceAuditReport: Sendable {
+    let definitions: [PersistenceDefinition]
+    let skippedItems: Int
+}

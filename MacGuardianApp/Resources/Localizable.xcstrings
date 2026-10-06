@@ -514,15 +514,6 @@
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "清理检查" } }
       }
     },
-    "Review the contents of your user cache. This view analyzes files only; it does not delete them." : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Review the contents of your user cache. This view analyzes files only; it does not delete them." } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Revisa el contenido de la caché del usuario. Esta vista solo analiza archivos; no los elimina." } },
-        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ユーザーキャッシュの内容を確認します。ファイルを分析するだけで削除はしません。" } },
-        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Revise o conteúdo do cache do usuário. Esta tela apenas analisa os arquivos; não os exclui." } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "查看用户缓存内容。此页面只分析文件，不会删除文件。" } }
-      }
-    },
     "Smart Scan" : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Smart Scan" } },
@@ -730,15 +721,6 @@
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "未找到应用程序" } }
       }
     },
-    "Application removal plans are not available yet. This inventory does not change apps." : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Application removal plans are not available yet. This inventory does not change apps." } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Los planes para desinstalar aplicaciones aún no están disponibles. Este inventario no modifica las apps." } },
-        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アプリ削除プランはまだ利用できません。この一覧でアプリが変更されることはありません。" } },
-        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Os planos de remoção de aplicativos ainda não estão disponíveis. Este inventário não altera os apps." } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "应用卸载计划尚未推出。此清单不会更改任何应用。" } }
-      }
-    },
     "macOS does not provide a public API to read a complete inventory of all app privacy grants. Mac Guardian will not inspect the protected TCC database or claim permission states it cannot verify." : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "macOS does not provide a public API to read a complete inventory of all app privacy grants. Mac Guardian will not inspect the protected TCC database or claim permission states it cannot verify." } },
@@ -845,15 +827,6 @@
         "ja" : { "stringUnit" : { "state" : "translated", "value" : "この一覧は起動項目を無効化または削除しません。" } },
         "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Este inventário não desativa nem remove itens de inicialização." } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "此清单不会停用或移除任何启动项。" } }
-      }
-    },
-    "error.persistenceAuditFailed" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Could not read startup definitions. Check folder permissions and try again." } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "No se pudieron leer las definiciones de inicio. Revisa los permisos de las carpetas e inténtalo de nuevo." } },
-        "ja" : { "stringUnit" : { "state" : "translated", "value" : "起動定義を読み取れませんでした。フォルダのアクセス権を確認して再試行してください。" } },
-        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Não foi possível ler as definições de inicialização. Verifique as permissões das pastas e tente novamente." } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无法读取启动定义。请检查文件夹权限后重试。" } }
       }
     },
     "Review direct items in your user cache. Select an item to move it to Trash; close its app first. Nothing is permanently erased by Mac Guardian." : {
@@ -1036,6 +1009,60 @@
         "ja" : { "stringUnit" : { "state" : "translated", "value" : "キャンセル" } }
       }
     },
+    "Some launch files or folders could not be read; the inventory may be incomplete." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Some launch files or folders could not be read; the inventory may be incomplete." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No se pudieron leer algunos archivos o carpetas de inicio; el inventario podría estar incompleto." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Não foi possível ler alguns arquivos ou pastas de inicialização; o inventário pode estar incompleto." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "部分启动文件或文件夹无法读取，清单可能不完整。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "一部の起動ファイルまたはフォルダを読み取れず、一覧が不完全な可能性があります。" } }
+      }
+    },
+    "Showing the 300 largest matching files." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Showing the 300 largest matching files." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Se muestran los 300 archivos coincidentes más grandes." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Exibindo os 300 maiores arquivos correspondentes." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示最大的 300 个匹配文件。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "一致したファイルのうち、サイズが大きい上位300件を表示しています。" } }
+      }
+    },
+    "Quit the application first" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Quit the application first" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cierra primero la aplicación" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Feche o aplicativo primeiro" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "请先退出应用" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "先にアプリを終了してください" } }
+      }
+    },
+    "This application is still running. Quit it and try again." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "This application is still running. Quit it and try again." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "La aplicación sigue abierta. Ciérrala e inténtalo de nuevo." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O aplicativo ainda está aberto. Feche-o e tente novamente." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "此应用仍在运行。请退出后重试。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "このアプリはまだ起動中です。終了してからもう一度お試しください。" } }
+      }
+    },
+    "Some cache items could not be read; the displayed size may be incomplete." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Some cache items could not be read; the displayed size may be incomplete." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No se pudieron leer algunos elementos de caché; el tamaño mostrado podría estar incompleto." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Não foi possível ler alguns itens do cache; o tamanho exibido pode estar incompleto." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "部分缓存项目无法读取，显示的大小可能不完整。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "一部のキャッシュ項目を読み取れず、表示サイズが不完全な可能性があります。" } }
+      }
+    },
+    "Some files could not be read; displayed sizes may be partial." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Some files could not be read; displayed sizes may be partial." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No se pudieron leer algunos archivos; los tamaños podrían ser parciales." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Não foi possível ler alguns arquivos; os tamanhos podem estar parciais." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "部分文件无法读取，显示的大小可能不完整。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "一部のファイルを読み取れず、表示サイズが不完全な可能性があります。" } }
+      }
+    },
     "Unknown error" : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Unknown error" } },
@@ -1043,6 +1070,70 @@
         "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Erro desconhecido" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "未知错误" } },
         "ja" : { "stringUnit" : { "state" : "translated", "value" : "不明なエラー" } }
+      }
+    }
+,
+    "No files match your filter" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No files match your filter" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ningún archivo coincide con el filtro" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Nenhum arquivo corresponde ao filtro" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "没有文件符合筛选条件" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "フィルタに一致するファイルはありません" } }
+      }
+    },
+    "No matching applications" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No matching applications" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No hay aplicaciones coincidentes" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Nenhum aplicativo correspondente" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "没有匹配的应用程序" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "一致するアプリケーションはありません" } }
+      }
+    },
+    "Startup Volume" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Startup Volume" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Volumen de arranque" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Volume de inicialização" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "启动宗卷" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "起動ボリューム" } }
+      }
+    },
+    "Only direct items in your user cache can be moved." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Only direct items in your user cache can be moved." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Solo se pueden mover elementos directamente dentro de la caché de tu usuario." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Só é possível mover itens diretamente dentro do cache do usuário." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "只能移动用户缓存文件夹中的直接项目。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ユーザーキャッシュ直下の項目のみ移動できます。" } }
+      }
+    },
+    "Mac Guardian cannot move symbolic links to Trash." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mac Guardian cannot move symbolic links to Trash." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Mac Guardian no puede mover enlaces simbólicos a la Papelera." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O Mac Guardian não pode mover links simbólicos para o Lixo." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Mac Guardian 无法将符号链接移到废纸篓。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "Mac Guardian はシンボリックリンクをゴミ箱に移動できません。" } }
+      }
+    },
+    "macOS could not move this item. Check permissions and try again." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "macOS could not move this item. Check permissions and try again." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "macOS no pudo mover este elemento. Revisa los permisos e inténtalo de nuevo." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O macOS não conseguiu mover este item. Verifique as permissões e tente novamente." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "macOS 无法移动此项目。请检查权限后重试。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "macOS が項目を移動できませんでした。アクセス権を確認して、もう一度お試しください。" } }
+      }
+    },
+    "Only app bundles directly inside /Applications or ~/Applications can be moved." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Only app bundles directly inside /Applications or ~/Applications can be moved." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Solo se pueden mover apps ubicadas directamente en /Applications o ~/Applications." } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "Só é possível mover apps localizados diretamente em /Applications ou ~/Applications." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "只能移动直接位于 /Applications 或 ~/Applications 中的应用。" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "/Applications または ~/Applications 直下にあるアプリのみ移動できます。" } }
       }
     }
   },

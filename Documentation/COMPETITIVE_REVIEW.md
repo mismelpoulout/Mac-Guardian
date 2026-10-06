@@ -66,4 +66,4 @@ No descargué ni ejecuté repositorios de terceros. La evaluación de arriba usa
 
 ## Próxima decisión sugerida
 
-Conservar Phase 1 tal como está y usar esta revisión para definir Phase 2. Priorizar el inventario incremental de almacenamiento, separado por procedencia, con conteo no duplicado, progreso/cancelación, motivos de omisión y acceso a Finder. Las acciones de limpieza, permisos avanzados, desinstalación y duplicados quedan para sus fases planificadas.
+La base de análisis incremental, acceso a Finder, cachés de desarrollo, inventario de apps y auditoría de inicio ya está implementada. El siguiente trabajo útil es reforzar los motivos de omisión, evitar doble conteo de archivos compartidos, validar de nuevo los objetivos antes de moverlos a Trash y diseñar una revisión explícita de residuos de apps. Los permisos avanzados, duplicados y limpieza automática siguen fuera del alcance actual.
