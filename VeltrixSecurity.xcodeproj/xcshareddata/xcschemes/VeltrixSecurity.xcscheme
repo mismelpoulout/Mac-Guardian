@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0B096F4D7B9B9EC1EC332953"
+               BlueprintIdentifier = "DC66C21D4C60BDAE087195F4"
                BuildableName = "VeltrixSecurity.app"
                BlueprintName = "VeltrixSecurity"
                ReferencedContainer = "container:VeltrixSecurity.xcodeproj">
@@ -29,7 +29,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9AB619810ED8756F983C672F"
+               BlueprintIdentifier = "94D081DABA629AFA425BDBFD"
                BuildableName = "VeltrixSecurityTests.xctest"
                BlueprintName = "VeltrixSecurityTests"
                ReferencedContainer = "container:VeltrixSecurity.xcodeproj">
@@ -46,7 +46,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0B096F4D7B9B9EC1EC332953"
+            BlueprintIdentifier = "DC66C21D4C60BDAE087195F4"
             BuildableName = "VeltrixSecurity.app"
             BlueprintName = "VeltrixSecurity"
             ReferencedContainer = "container:VeltrixSecurity.xcodeproj">
@@ -58,7 +58,7 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9AB619810ED8756F983C672F"
+               BlueprintIdentifier = "94D081DABA629AFA425BDBFD"
                BuildableName = "VeltrixSecurityTests.xctest"
                BlueprintName = "VeltrixSecurityTests"
                ReferencedContainer = "container:VeltrixSecurity.xcodeproj">
@@ -82,7 +82,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0B096F4D7B9B9EC1EC332953"
+            BlueprintIdentifier = "DC66C21D4C60BDAE087195F4"
             BuildableName = "VeltrixSecurity.app"
             BlueprintName = "VeltrixSecurity"
             ReferencedContainer = "container:VeltrixSecurity.xcodeproj">
@@ -99,7 +99,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0B096F4D7B9B9EC1EC332953"
+            BlueprintIdentifier = "DC66C21D4C60BDAE087195F4"
             BuildableName = "VeltrixSecurity.app"
             BlueprintName = "VeltrixSecurity"
             ReferencedContainer = "container:VeltrixSecurity.xcodeproj">

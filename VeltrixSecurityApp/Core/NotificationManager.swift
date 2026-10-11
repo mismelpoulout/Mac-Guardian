@@ -3,7 +3,7 @@ import UserNotifications
 import AppKit
 
 final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
-    static let shared = NotificationManager()
+    nonisolated(unsafe) static let shared = NotificationManager()
     
     private override init() {
         super.init()
@@ -16,6 +16,7 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         }
     }
     
+    @MainActor
     func showNotification(title: String, subtitle: String, body: String = "") {
         let content = UNMutableNotificationContent()
         content.title = title
@@ -39,8 +40,7 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         }
     }
     
-    // Delegate method to allow notifications to show even if app is in foreground
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.banner, .sound])
     }
 }

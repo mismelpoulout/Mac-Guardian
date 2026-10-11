@@ -121,8 +121,7 @@ final class PerformanceMonitor {
 
     @discardableResult
     func terminateProcess(item: ProcessItem, force: Bool = false) -> Bool {
-        guard let runningApp = NSRunningApplication.runningApplications(withArrivalOptions: .all)
-            .first(where: { $0.processIdentifier == item.id }) else {
+        guard let runningApp = NSWorkspace.shared.runningApplications.first(where: { $0.processIdentifier == item.id }) else {
             return false
         }
 
@@ -216,7 +215,7 @@ final class PerformanceMonitor {
             }
         }
 
-        let pageSize = Int64(vm_kernel_page_size)
+        let pageSize: Int64 = 4096
         let totalRAM = Int64(ProcessInfo.processInfo.physicalMemory)
 
         guard kr == KERN_SUCCESS else {
