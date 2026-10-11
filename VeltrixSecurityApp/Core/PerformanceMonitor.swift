@@ -84,7 +84,10 @@ final class PerformanceMonitor {
 
         timerTask = Task { [weak self] in
             while !Task.isCancelled {
-                try? await Task.sleep(nanoseconds: 5_000_000_000) // 5 seconds - polling interval
+                // Polling interval: 5 seconds
+                // Nota: Para optimizar batería, idealmente pausaría cuando la vista no es visible (scenePhase)
+                // Actualmente mantiene un balance entre actualización y consumo de recursos
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
                 guard let self, self.isMonitoring else { break }
                 self.refreshMetrics()
             }
