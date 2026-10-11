@@ -514,8 +514,19 @@ struct RunSmartScanIntent: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult & ProvidesDialog {
-        _ = await AppleIntelligenceEngine.shared.runAnalysis()
-        return .result(dialog: "Apple Intelligence ha completado el diagnóstico inteligente de tu Mac.")
+        let engine = GlobalSmartScanEngine.shared
+        
+        // Ejecutar escaneo real
+        engine.startScan()
+        var elapsed = 0
+        while engine.isScanning && elapsed < 120 {
+            try? await Task.sleep(nanoseconds: 500_000_000)
+            elapsed += 1
+        }
+        
+        let filesFound = engine.filesExaminedCount
+        let spaceMB = engine.bytesAccumulated / 1_000_000
+        return .result(dialog: "Escaneo completado: \(filesFound) elementos encontrados, \(spaceMB) MB recuperables.")
     }
 }
 
@@ -528,8 +539,27 @@ struct OptimizeStorageIntent: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult & ProvidesDialog {
-        AppleIntelligenceEngine.shared.recordOptimizationComplete()
-        return .result(dialog: "Veltrix Security ha optimizado el almacenamiento de tu Mac con Apple Intelligence.")
+        let engine = GlobalSmartScanEngine.shared
+        
+        // Ejecutar escaneo de cachés
+        engine.startScan()
+        var elapsed = 0
+        while engine.isScanning && elapsed < 120 {
+            try? await Task.sleep(nanoseconds: 500_000_000)
+            elapsed += 1
+        }
+        
+        // Limpiar cachés automáticamente
+        let cacheItems = engine.report.items(for: .caches)
+        let itemsToClean = Set(cacheItems.map { $0.id })
+        
+        if !itemsToClean.isEmpty {
+            let (freedBytes, deletedCount, _) = await engine.cleanSelectedItems(itemIDs: itemsToClean)
+            let freedMB = freedBytes / 1_000_000
+            return .result(dialog: "Optimización completada: se liberaron \(freedMB) MB eliminando \(deletedCount) elementos.")
+        } else {
+            return .result(dialog: "No se encontraron cachés para limpiar.")
+        }
     }
 }
 

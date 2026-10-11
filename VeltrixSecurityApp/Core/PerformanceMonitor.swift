@@ -84,7 +84,7 @@ final class PerformanceMonitor {
 
         timerTask = Task { [weak self] in
             while !Task.isCancelled {
-                try? await Task.sleep(nanoseconds: 2_000_000_000) // 2 seconds
+                try? await Task.sleep(nanoseconds: 5_000_000_000) // 5 seconds - polling interval
                 guard let self, self.isMonitoring else { break }
                 self.refreshMetrics()
             }

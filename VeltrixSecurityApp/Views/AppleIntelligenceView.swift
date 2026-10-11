@@ -193,7 +193,7 @@ struct AppleIntelligenceView: View {
         switch rec.action {
         case .closeHeavyProcesses:
             Task {
-                try? await Task.sleep(nanoseconds: 300_000_000)
+                // try? await Task.sleep(nanoseconds: 300_000_000)
                 let monitor = PerformanceMonitor.shared
                 _ = monitor.terminateProcesses(monitor.heavyProcesses)
                 executingActionID = nil
@@ -203,7 +203,7 @@ struct AppleIntelligenceView: View {
 
         case .optimizeRAM:
             Task {
-                try? await Task.sleep(nanoseconds: 300_000_000)
+                // try? await Task.sleep(nanoseconds: 300_000_000)
                 PerformanceMonitor.shared.optimizeRAM()
                 NotificationManager.shared.playSuccessSound()
                 NotificationManager.shared.showNotification(
@@ -367,7 +367,7 @@ struct AppleIntelligenceView: View {
             default:
                 break
             }
-            try? await Task.sleep(nanoseconds: 800_000_000)
+                // try? await Task.sleep(nanoseconds: 800_000_000)
             executingCommandId = nil
         }
     }
