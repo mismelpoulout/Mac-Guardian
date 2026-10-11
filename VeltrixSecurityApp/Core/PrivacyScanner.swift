@@ -153,10 +153,28 @@ final class PrivacyScanner {
         }
 
         // 2. Audit Tracking Footprint & Cookies
+        // Soporta: Safari, Chrome, Firefox, Brave, Edge, Arc
         let cookiePaths = [
-            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Cookies", isDirectory: true),
+            // Safari cookies (stored in Preferences)
+            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Safari", isDirectory: true),
+            
+            // Chrome
             FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/Google/Chrome/Default/Cookies"),
-            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/BraveSoftware/Brave-Browser/Default/Cookies")
+            
+            // Firefox
+            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/Firefox/Profiles", isDirectory: true),
+            
+            // Brave
+            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/BraveSoftware/Brave-Browser/Default/Cookies"),
+            
+            // Microsoft Edge
+            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/Microsoft Edge/Default/Cookies"),
+            
+            // Arc
+            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/Arc/Default/Cookies"),
+            
+            // System-wide cookies
+            FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Cookies", isDirectory: true)
         ]
 
         for path in cookiePaths {

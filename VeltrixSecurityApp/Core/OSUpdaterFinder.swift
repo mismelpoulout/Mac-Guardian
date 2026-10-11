@@ -169,3 +169,31 @@ struct OSUpdaterFinder: Sendable {
         return total
     }
 }
+
+
+// MARK: - System Version Detection
+
+extension OSUpdaterFinder {
+    /// Obtiene la versión actual de macOS
+    static func getCurrentMacOSVersion() -> String {
+        let osVersion = ProcessInfo.processInfo.operatingSystemVersion
+        return "\(osVersion.majorVersion).\(osVersion.minorVersion).\(osVersion.patchVersion)"
+    }
+
+    /// Obtiene el nombre amigable de la versión de macOS
+    static func getMacOSVersionName() -> String {
+        let osVersion = ProcessInfo.processInfo.operatingSystemVersion
+        switch osVersion.majorVersion {
+        case 14: return "macOS Sonoma"
+        case 13: return "macOS Ventura"
+        case 12: return "macOS Monterey"
+        case 11: return "macOS Big Sur"
+        default: return "macOS \(osVersion.majorVersion)"
+        }
+    }
+    
+    /// URL para abrir configuración de actualización de macOS
+    static var systemPreferencesURL: URL? {
+        URL(string: "x-apple.systempreferences:com.apple.Software-Update-Settings.extension")
+    }
+}
