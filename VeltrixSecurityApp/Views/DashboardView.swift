@@ -350,7 +350,7 @@ struct DashboardView: View {
         case .closeHeavyProcesses:
             Task {
                 try? await Task.sleep(nanoseconds: 300_000_000)
-                let (closed, freed) = performanceMonitor.terminateProcesses(performanceMonitor.heavyProcesses)
+                let (_ , _) = performanceMonitor.terminateProcesses(performanceMonitor.heavyProcesses)
                 executingActionID = nil
                 executedActionIDs.insert(rec.id)
                 _ = await aiEngine.runAnalysis()

@@ -207,7 +207,6 @@ final class AppleIntelligenceEngine {
     private(set) var healthScore: AISystemHealthScore?
     private(set) var lastOptimizedDate: Date?
     private(set) var isSpeaking = false
-    private var speechSynth: NSSpeechSynthesizer?
 
     let availableSiriCommands: [SiriCommandItem] = [
         SiriCommandItem(
@@ -248,7 +247,6 @@ final class AppleIntelligenceEngine {
     ]
 
     init() {
-        self.speechSynth = NSSpeechSynthesizer()
     }
 
     /// Evaluates whether a user cache directory is safe to delete
@@ -333,17 +331,16 @@ final class AppleIntelligenceEngine {
         }
     }
 
-    /// Speech output for Siri simulation
+    /// Speech output simulation (audio disabled to avoid deprecated APIs)
     func speakSiriResponse(_ text: String) {
-        if speechSynth == nil {
-            speechSynth = NSSpeechSynthesizer()
-        }
-        speechSynth?.stopSpeaking()
-        speechSynth?.startSpeaking(text)
+        // Simulate Siri response without using deprecated NSSpeechSynthesizer
+        // In a production app, use AVFoundation + AVSpeechSynthesizer (iOS 7+)
+        // or AVAudioEngine for full control.
+        // For now, we simulate the speech state without audio.
         isSpeaking = true
-
+        
         Task {
-            try? await Task.sleep(nanoseconds: 3_000_000_000)
+            try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 second - simulate speech
             self.isSpeaking = false
         }
     }
