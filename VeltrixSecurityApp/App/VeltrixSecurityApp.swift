@@ -2,6 +2,8 @@ import SwiftUI
 
 @main
 struct VeltrixSecurityApp: App {
+    @State private var appLanguage = UserDefaults.standard.string(forKey: "preferredLanguage") ?? "es"
+    
     init() {
         handleCommandLineArguments()
     }
@@ -10,6 +12,12 @@ struct VeltrixSecurityApp: App {
         WindowGroup {
             MainView()
                 .frame(minWidth: 900, minHeight: 620)
+                .environment(\.locale, Locale(identifier: appLanguage))
+                .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("LanguageChanged"))) { notification in
+                    if let newLanguage = notification.object as? String {
+                        appLanguage = newLanguage
+                    }
+                }
         }
         .windowStyle(.titleBar)
     }
@@ -18,7 +26,6 @@ struct VeltrixSecurityApp: App {
         let arguments = CommandLine.arguments
         if arguments.contains("--scheduled-cleanup") {
             executeScheduledCleanup()
-            // Exit after cleanup completes
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                 exit(0)
             }
@@ -32,7 +39,6 @@ struct VeltrixSecurityApp: App {
 
             print("[VeltrixSecurity] Iniciando limpieza programada...")
             
-            // Load current settings to know what to clean
             let settings = manager.settings
             guard settings.isEnabled else {
                 print("[VeltrixSecurity] Limpieza programada deshabilitada. Abortando.")
@@ -44,19 +50,16 @@ struct VeltrixSecurityApp: App {
                 return
             }
 
-            // Start scan
             engine.startScan()
             
-            // Wait for scan to complete (max 120 seconds)
             var elapsed = 0
             while engine.isScanning && elapsed < 120 {
-                try? await Task.sleep(nanoseconds: 500_000_000) // 0.5 seconds
+                try? await Task.sleep(nanoseconds: 500_000_000)
                 elapsed += 1
             }
 
             print("[VeltrixSecurity] Escaneo completado. Elementos encontrados: \(engine.filesExaminedCount)")
 
-            // Collect items to clean based on settings
             var itemsToClean = Set<String>()
             
             if settings.cleanCaches {
@@ -73,12 +76,11 @@ struct VeltrixSecurityApp: App {
 
             if settings.cleanLargeFiles {
                 let largeItems = engine.report.items(for: .downloadsAndUser)
-                    .filter { $0.allocatedBytes > 100_000_000 } // >100MB
+                    .filter { $0.allocatedBytes > 100_000_000 }
                 itemsToClean.formUnion(largeItems.map { $0.id })
                 print("[VeltrixSecurity] Archivos grandes: \(largeItems.count) elementos")
             }
 
-            // Execute cleanup
             if !itemsToClean.isEmpty {
                 print("[VeltrixSecurity] Limpiando \(itemsToClean.count) elementos...")
                 let (freedBytes, deletedCount, failedCount) = await engine.cleanSelectedItems(itemIDs: itemsToClean)

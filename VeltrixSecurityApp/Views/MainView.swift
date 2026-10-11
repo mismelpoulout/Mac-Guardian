@@ -106,17 +106,45 @@ struct MainView: View {
         }
         .tint(Color.orange)
         .environment(\.locale, Locale(identifier: preferredLanguage))
+        .onChange(of: preferredLanguage) { oldValue, newValue in
+            // Fuerza re-renderizado global con nuevo idioma
+        }
     }
 
-    private var languagePicker: some View {
-        Picker("Language", selection: $preferredLanguage) {
-            Text("Español").tag("es")
-            Text("English").tag("en")
-            Text("Português").tag("pt-BR")
-            Text("中文").tag("zh-Hans")
-            Text("日本語").tag("ja")
+        private var languagePicker: some View {
+        Menu {
+            Button("Español") { 
+                preferredLanguage = "es"
+                UserDefaults.standard.set("es", forKey: "preferredLanguage")
+                NotificationCenter.default.post(name: NSNotification.Name("LanguageChanged"), object: "es")
+            }
+            Button("English") { 
+                preferredLanguage = "en"
+                UserDefaults.standard.set("en", forKey: "preferredLanguage")
+                NotificationCenter.default.post(name: NSNotification.Name("LanguageChanged"), object: "en")
+            }
+            Button("Português") { 
+                preferredLanguage = "pt-BR"
+                UserDefaults.standard.set("pt-BR", forKey: "preferredLanguage")
+                NotificationCenter.default.post(name: NSNotification.Name("LanguageChanged"), object: "pt-BR")
+            }
+            Button("中文") { 
+                preferredLanguage = "zh-Hans"
+                UserDefaults.standard.set("zh-Hans", forKey: "preferredLanguage")
+                NotificationCenter.default.post(name: NSNotification.Name("LanguageChanged"), object: "zh-Hans")
+            }
+            Button("日本語") { 
+                preferredLanguage = "ja"
+                UserDefaults.standard.set("ja", forKey: "preferredLanguage")
+                NotificationCenter.default.post(name: NSNotification.Name("LanguageChanged"), object: "ja")
+            }
+        } label: {
+            HStack {
+                Image(systemName: "globe")
+                Text("Idioma")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .pickerStyle(.menu)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .buttonStyle(.bordered)
     }
 }
