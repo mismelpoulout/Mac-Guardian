@@ -10,15 +10,15 @@
 
 ```sh
 xcodegen generate
-xcodebuild -project MacGuardian.xcodeproj -scheme MacGuardian -destination 'platform=macOS' build
-open MacGuardian.xcodeproj
+xcodebuild -project VeltrixSecurity.xcodeproj -scheme VeltrixSecurity -destination 'platform=macOS' build
+open VeltrixSecurity.xcodeproj
 ```
 
-Bundle identifier: `com.cynaxia.macguardian`. Product: Cynaxia. The generated Xcode project is derived from the checked-in `project.yml`.
+Bundle identifier: `com.cynaxia.veltrixsecurity`. Product: Cynaxia. The generated Xcode project is derived from the checked-in `project.yml`.
 
 ## Localization
 
-UI translations live in `MacGuardianApp/Resources/Localizable.xcstrings`. Keep the English source entry and provide translations for `es`, `en`, `pt-BR`, `zh-Hans`, and `ja`. Spanish is the first-run app preference; the selected language is stored in `UserDefaults` and applied to the SwiftUI locale without changing the macOS system language. Use locale-aware formatters for sizes and durations.
+UI translations live in `VeltrixSecurityApp/Resources/Localizable.xcstrings`. Keep the English source entry and provide translations for `es`, `en`, `pt-BR`, `zh-Hans`, and `ja`. Spanish is the first-run app preference; the selected language is stored in `UserDefaults` and applied to the SwiftUI locale without changing the macOS system language. Use locale-aware formatters for sizes and durations.
 
 ## Signing
 

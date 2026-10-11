@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		209C0F2C8A5E1D4B94776322 /* InstalledApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098B74F59163D3E54A73CAC7 /* InstalledApplication.swift */; };
+		21CB7E8F9E7953103B291230 /* SystemOverviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F4605D843B285446506B44 /* SystemOverviewProvider.swift */; };
+		2A957EA1ED253F410560D7E4 /* PersistenceDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3674766AA78F5B732627799 /* PersistenceDefinition.swift */; };
+		3E7823BA3B12F834D0C59FA5 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD275B9B04F6A536982496 /* NavigationItem.swift */; };
+		3F13D8BD8D177E21FC157083 /* FolderScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB3820AAF2461D64D0F8B45 /* FolderScanViewModel.swift */; };
+		3FAF71DA7931E1FD1583C648 /* DeveloperStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6E40F167608FF8206529F6 /* DeveloperStorageView.swift */; };
+		4FAC5FFED19060D43D6F3A8A /* CleanupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EA27E8BB046EDB05FFC9C /* CleanupView.swift */; };
+		64702D557A43BAA5EE9261CA /* FolderScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E45FC800F779F965E188 /* FolderScanner.swift */; };
+		6FCA660C58BB2A0FE72EB189 /* SystemOverviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00B61CE8000683216E739A /* SystemOverviewTests.swift */; };
+		749F0552E3924F40CCF99827 /* VeltrixSecurityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460C217546FFAAC3CE3D88F /* VeltrixSecurityApp.swift */; };
+		8168D3339C2AE0FD61100782 /* SystemUtilityViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D201E600C921A22992E26D /* SystemUtilityViews.swift */; };
+		82968F69A1E5E17B0CCA535D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0696BD35AD9B4C65098110B /* Assets.xcassets */; };
+		86FC22C4FADACA8B978AB573 /* SystemOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F88EAC404009F647D41938 /* SystemOverview.swift */; };
+		888F99016492F9125746ABA2 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546321519C25C46614D56F4 /* DashboardViewModel.swift */; };
+		913B0FC9AADC6EBB653DDF96 /* InstalledApplicationScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850E426C260A1FC078925C9 /* InstalledApplicationScanner.swift */; };
+		A005FD99DD5FAE9A78EE6CAD /* FolderScanReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4B96D1D937B828D0E9B8A /* FolderScanReport.swift */; };
+		B3034EC6B64BB9C6304D7437 /* PersistenceAuditScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F019AD7E9ACC8B113AC1717 /* PersistenceAuditScanner.swift */; };
+		B48153BCC1FF7268662CBCDE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F094699554712FBCC863C /* MainView.swift */; };
+		CADE0A8283004CE06499D33C /* VeltrixSecurityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CDB039913F1C4648CB956C /* VeltrixSecurityError.swift */; };
+		D713EF29A5556B87C82FF378 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 38F4882DD11EF0595EC9CAB1 /* Localizable.xcstrings */; };
+		D965F7177128782C924108B5 /* TrashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A251A93DC0BB86AD91FD3B /* TrashService.swift */; };
+		DB299E3FAA701F3B8142E816 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8247218873F833F8B613A8D /* DashboardView.swift */; };
+		DCB8EC792DE4E610D429436C /* DeveloperStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E6A5C3DF1824D603556BAB /* DeveloperStorageViewModel.swift */; };
+		E519DA03C9277FA78F083D32 /* InstalledApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5690809FC08C2F8DF5FD552D /* InstalledApplicationsView.swift */; };
+		E87C3C8EE62EDFA107E22446 /* GuardianLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA158DD6525EA44FDDE1AB5 /* GuardianLogger.swift */; };
+		FC6EFB94F2F525CDC853484D /* FolderAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4F4846124B7B59B66FEFA /* FolderAnalysisView.swift */; };
+		50C20FEA5FBE44538EC86834 /* OSUpdaterFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A39DE7027A4F6483083D04 /* OSUpdaterFinder.swift */; };
+		B834FB626FF0480194A082B7 /* ThreatScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322903DB122245B6ACA01D38 /* ThreatScanner.swift */; };
+		6C0CD8CAECB84BD29016E797 /* ScheduledCleanupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA77B716DF41859D9C2627 /* ScheduledCleanupManager.swift */; };
+		8C43C4B312F84285B4FBBE71 /* AutoInspectionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE3A7F662B4A15B1221886 /* AutoInspectionSheet.swift */; };
+		37308ACD6B3F498E8050F026 /* ThreatScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F8266E1F1E49B684BAA07F /* ThreatScanView.swift */; };
+		1501DCD4429643BC9608C62C /* ScheduledCleanupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403C7278ACE4F31A95C27D7 /* ScheduledCleanupView.swift */; };
+		E978DD1A048A45DD882B511D /* OSUpdaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314F5DE0A326459D892719A6 /* OSUpdaterView.swift */; };
+		A11B2C3D4E5F60718293A4B5 /* AppleIntelligenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11C2D3E4F5061728394A5B6 /* AppleIntelligenceEngine.swift */; };
+		C11D2E3F405162738495B6C7 /* AppleIntelligenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E2F30415263748596C7D8 /* AppleIntelligenceView.swift */; };
+		E11F3041526374859607D8E9 /* GlobalSmartScanEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1104152637485960718E9FA /* GlobalSmartScanEngine.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE455559445A5A5333615B3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B6C8351FBD2A9F32F8B6111 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B096F4D7B9B9EC1EC332953;
+			remoteInfo = VeltrixSecurity;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00CD275B9B04F6A536982496 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
+		098B74F59163D3E54A73CAC7 /* InstalledApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledApplication.swift; sourceTree = "<group>"; };
+		19A251A93DC0BB86AD91FD3B /* TrashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashService.swift; sourceTree = "<group>"; };
+		38F4882DD11EF0595EC9CAB1 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		4A00B61CE8000683216E739A /* SystemOverviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemOverviewTests.swift; sourceTree = "<group>"; };
+		4F019AD7E9ACC8B113AC1717 /* PersistenceAuditScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceAuditScanner.swift; sourceTree = "<group>"; };
+		52E6E45FC800F779F965E188 /* FolderScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderScanner.swift; sourceTree = "<group>"; };
+		5690809FC08C2F8DF5FD552D /* InstalledApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledApplicationsView.swift; sourceTree = "<group>"; };
+		59C95B766998494F080E79E3 /* VeltrixSecurity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeltrixSecurity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6546321519C25C46614D56F4 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		702EA27E8BB046EDB05FFC9C /* CleanupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanupView.swift; sourceTree = "<group>"; };
+		70F88EAC404009F647D41938 /* SystemOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemOverview.swift; sourceTree = "<group>"; };
+		75F4B96D1D937B828D0E9B8A /* FolderScanReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderScanReport.swift; sourceTree = "<group>"; };
+		89A4F4846124B7B59B66FEFA /* FolderAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderAnalysisView.swift; sourceTree = "<group>"; };
+		8A6E40F167608FF8206529F6 /* DeveloperStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperStorageView.swift; sourceTree = "<group>"; };
+		9460C217546FFAAC3CE3D88F /* VeltrixSecurityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeltrixSecurityApp.swift; sourceTree = "<group>"; };
+		94CDB039913F1C4648CB956C /* VeltrixSecurityError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeltrixSecurityError.swift; sourceTree = "<group>"; };
+		9E00131DCC2E41FE5A15F3A0 /* VeltrixSecurityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VeltrixSecurityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA158DD6525EA44FDDE1AB5 /* GuardianLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianLogger.swift; sourceTree = "<group>"; };
+		B0696BD35AD9B4C65098110B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3674766AA78F5B732627799 /* PersistenceDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceDefinition.swift; sourceTree = "<group>"; };
+		C7E6A5C3DF1824D603556BAB /* DeveloperStorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperStorageViewModel.swift; sourceTree = "<group>"; };
+		D8247218873F833F8B613A8D /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		DCB3820AAF2461D64D0F8B45 /* FolderScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderScanViewModel.swift; sourceTree = "<group>"; };
+		E3F4605D843B285446506B44 /* SystemOverviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemOverviewProvider.swift; sourceTree = "<group>"; };
+		E51F094699554712FBCC863C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F0D201E600C921A22992E26D /* SystemUtilityViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUtilityViews.swift; sourceTree = "<group>"; };
+		F850E426C260A1FC078925C9 /* InstalledApplicationScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledApplicationScanner.swift; sourceTree = "<group>"; };
+		A3A39DE7027A4F6483083D04 /* OSUpdaterFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUpdaterFinder.swift; sourceTree = "<group>"; };
+		322903DB122245B6ACA01D38 /* ThreatScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatScanner.swift; sourceTree = "<group>"; };
+		4DEA77B716DF41859D9C2627 /* ScheduledCleanupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledCleanupManager.swift; sourceTree = "<group>"; };
+		71CE3A7F662B4A15B1221886 /* AutoInspectionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInspectionSheet.swift; sourceTree = "<group>"; };
+		84F8266E1F1E49B684BAA07F /* ThreatScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatScanView.swift; sourceTree = "<group>"; };
+		6403C7278ACE4F31A95C27D7 /* ScheduledCleanupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledCleanupView.swift; sourceTree = "<group>"; };
+		314F5DE0A326459D892719A6 /* OSUpdaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUpdaterView.swift; sourceTree = "<group>"; };
+		B11C2D3E4F5061728394A5B6 /* AppleIntelligenceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIntelligenceEngine.swift; sourceTree = "<group>"; };
+		D11E2F30415263748596C7D8 /* AppleIntelligenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIntelligenceView.swift; sourceTree = "<group>"; };
+		F1104152637485960718E9FA /* GlobalSmartScanEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSmartScanEngine.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0676992D4BE22712ED073883 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				00CD275B9B04F6A536982496 /* NavigationItem.swift */,
+);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+
+		0ADDD06C81B932E65F03A5FD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				52E6E45FC800F779F965E188 /* FolderScanner.swift */,
+				F850E426C260A1FC078925C9 /* InstalledApplicationScanner.swift */,
+				4F019AD7E9ACC8B113AC1717 /* PersistenceAuditScanner.swift */,
+				E3F4605D843B285446506B44 /* SystemOverviewProvider.swift */,
+				19A251A93DC0BB86AD91FD3B /* TrashService.swift */,
+				A3A39DE7027A4F6483083D04 /* OSUpdaterFinder.swift */,
+				322903DB122245B6ACA01D38 /* ThreatScanner.swift */,
+				4DEA77B716DF41859D9C2627 /* ScheduledCleanupManager.swift */,
+				B11C2D3E4F5061728394A5B6 /* AppleIntelligenceEngine.swift */,
+				F1104152637485960718E9FA /* GlobalSmartScanEngine.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+
+		290B48D83BBAA6F01C015E13 /* VeltrixSecurityApp */ = {
+			isa = PBXGroup;
+			children = (
+				800C91F6DD75BE3EBEEC48B3 /* App */,
+				0ADDD06C81B932E65F03A5FD /* Core */,
+				CFDAAEC2276D03194C6FF385 /* Domain */,
+				CB494598FDD0A71BAA677444 /* Infrastructure */,
+				0676992D4BE22712ED073883 /* Navigation */,
+				E1027E869D17D1FFC19D64E5 /* Resources */,
+				82754BB5F089D069FD9F4AAC /* ViewModels */,
+				BE9A58242453370EF19AF631 /* Views */,
+			);
+			path = VeltrixSecurityApp;
+			sourceTree = "<group>";
+		};
+		66B375111045A9751880D043 /* VeltrixSecurityTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A00B61CE8000683216E739A /* SystemOverviewTests.swift */,
+			);
+			name = VeltrixSecurityTests;
+			path = Tests/VeltrixSecurityTests;
+			sourceTree = "<group>";
+		};
+		800C91F6DD75BE3EBEEC48B3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9460C217546FFAAC3CE3D88F /* VeltrixSecurityApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		82754BB5F089D069FD9F4AAC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6546321519C25C46614D56F4 /* DashboardViewModel.swift */,
+				C7E6A5C3DF1824D603556BAB /* DeveloperStorageViewModel.swift */,
+				DCB3820AAF2461D64D0F8B45 /* FolderScanViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9D11FFDEC9EC31EDE0DF0A7F = {
+			isa = PBXGroup;
+			children = (
+				290B48D83BBAA6F01C015E13 /* VeltrixSecurityApp */,
+				66B375111045A9751880D043 /* VeltrixSecurityTests */,
+				A23F340082507CBE65421CD2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A23F340082507CBE65421CD2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59C95B766998494F080E79E3 /* VeltrixSecurity.app */,
+				9E00131DCC2E41FE5A15F3A0 /* VeltrixSecurityTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB77234E447F5A1AF1543BA9 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				AFA158DD6525EA44FDDE1AB5 /* GuardianLogger.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		BE9A58242453370EF19AF631 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				702EA27E8BB046EDB05FFC9C /* CleanupView.swift */,
+				D8247218873F833F8B613A8D /* DashboardView.swift */,
+				8A6E40F167608FF8206529F6 /* DeveloperStorageView.swift */,
+				89A4F4846124B7B59B66FEFA /* FolderAnalysisView.swift */,
+				5690809FC08C2F8DF5FD552D /* InstalledApplicationsView.swift */,
+				E51F094699554712FBCC863C /* MainView.swift */,
+				F0D201E600C921A22992E26D /* SystemUtilityViews.swift */,
+				71CE3A7F662B4A15B1221886 /* AutoInspectionSheet.swift */,
+				84F8266E1F1E49B684BAA07F /* ThreatScanView.swift */,
+				6403C7278ACE4F31A95C27D7 /* ScheduledCleanupView.swift */,
+				314F5DE0A326459D892719A6 /* OSUpdaterView.swift */,
+				D11E2F30415263748596C7D8 /* AppleIntelligenceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+
+		CB494598FDD0A71BAA677444 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				BB77234E447F5A1AF1543BA9 /* Logging */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		CFDAAEC2276D03194C6FF385 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				75F4B96D1D937B828D0E9B8A /* FolderScanReport.swift */,
+				098B74F59163D3E54A73CAC7 /* InstalledApplication.swift */,
+				94CDB039913F1C4648CB956C /* VeltrixSecurityError.swift */,
+				B3674766AA78F5B732627799 /* PersistenceDefinition.swift */,
+				70F88EAC404009F647D41938 /* SystemOverview.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E1027E869D17D1FFC19D64E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B0696BD35AD9B4C65098110B /* Assets.xcassets */,
+				38F4882DD11EF0595EC9CAB1 /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0B096F4D7B9B9EC1EC332953 /* VeltrixSecurity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9C06B43478316015F9969C3 /* Build configuration list for PBXNativeTarget "VeltrixSecurity" */;
+			buildPhases = (
+				2E587798404BDC8D018FFC2F /* Sources */,
+				D07BA802FFCCBF27A9168600 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VeltrixSecurity;
+			packageProductDependencies = (
+			);
+			productName = VeltrixSecurity;
+			productReference = 59C95B766998494F080E79E3 /* VeltrixSecurity.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9AB619810ED8756F983C672F /* VeltrixSecurityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63EFB1AD1E6C888724325283 /* Build configuration list for PBXNativeTarget "VeltrixSecurityTests" */;
+			buildPhases = (
+				7CB183EF1905CA743711BDEE /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				859FE0FCA55DC059A118491C /* PBXTargetDependency */,
+			);
+			name = VeltrixSecurityTests;
+			packageProductDependencies = (
+			);
+			productName = VeltrixSecurityTests;
+			productReference = 9E00131DCC2E41FE5A15F3A0 /* VeltrixSecurityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B6C8351FBD2A9F32F8B6111 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					0B096F4D7B9B9EC1EC332953 = {
+						ProvisioningStyle = Automatic;
+					};
+					9AB619810ED8756F983C672F = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 34C84D505328DECFEBE6C201 /* Build configuration list for PBXProject "VeltrixSecurity" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+				es,
+				ja,
+				"pt-BR",
+				"zh-Hans",
+			);
+			mainGroup = 9D11FFDEC9EC31EDE0DF0A7F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A23F340082507CBE65421CD2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0B096F4D7B9B9EC1EC332953 /* VeltrixSecurity */,
+				9AB619810ED8756F983C672F /* VeltrixSecurityTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D07BA802FFCCBF27A9168600 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82968F69A1E5E17B0CCA535D /* Assets.xcassets in Resources */,
+				D713EF29A5556B87C82FF378 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E587798404BDC8D018FFC2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FAC5FFED19060D43D6F3A8A /* CleanupView.swift in Sources */,
+				DB299E3FAA701F3B8142E816 /* DashboardView.swift in Sources */,
+				888F99016492F9125746ABA2 /* DashboardViewModel.swift in Sources */,
+				3FAF71DA7931E1FD1583C648 /* DeveloperStorageView.swift in Sources */,
+				DCB8EC792DE4E610D429436C /* DeveloperStorageViewModel.swift in Sources */,
+				FC6EFB94F2F525CDC853484D /* FolderAnalysisView.swift in Sources */,
+				A005FD99DD5FAE9A78EE6CAD /* FolderScanReport.swift in Sources */,
+				3F13D8BD8D177E21FC157083 /* FolderScanViewModel.swift in Sources */,
+				64702D557A43BAA5EE9261CA /* FolderScanner.swift in Sources */,
+				E87C3C8EE62EDFA107E22446 /* GuardianLogger.swift in Sources */,
+				209C0F2C8A5E1D4B94776322 /* InstalledApplication.swift in Sources */,
+				913B0FC9AADC6EBB653DDF96 /* InstalledApplicationScanner.swift in Sources */,
+				E519DA03C9277FA78F083D32 /* InstalledApplicationsView.swift in Sources */,
+				749F0552E3924F40CCF99827 /* VeltrixSecurityApp.swift in Sources */,
+				CADE0A8283004CE06499D33C /* VeltrixSecurityError.swift in Sources */,
+				B48153BCC1FF7268662CBCDE /* MainView.swift in Sources */,
+				3E7823BA3B12F834D0C59FA5 /* NavigationItem.swift in Sources */,
+				B3034EC6B64BB9C6304D7437 /* PersistenceAuditScanner.swift in Sources */,
+				2A957EA1ED253F410560D7E4 /* PersistenceDefinition.swift in Sources */,
+				86FC22C4FADACA8B978AB573 /* SystemOverview.swift in Sources */,
+				21CB7E8F9E7953103B291230 /* SystemOverviewProvider.swift in Sources */,
+				8168D3339C2AE0FD61100782 /* SystemUtilityViews.swift in Sources */,
+				D965F7177128782C924108B5 /* TrashService.swift in Sources */,
+							50C20FEA5FBE44538EC86834 /* OSUpdaterFinder.swift in Sources */,
+				B834FB626FF0480194A082B7 /* ThreatScanner.swift in Sources */,
+				6C0CD8CAECB84BD29016E797 /* ScheduledCleanupManager.swift in Sources */,
+				8C43C4B312F84285B4FBBE71 /* AutoInspectionSheet.swift in Sources */,
+				37308ACD6B3F498E8050F026 /* ThreatScanView.swift in Sources */,
+				1501DCD4429643BC9608C62C /* ScheduledCleanupView.swift in Sources */,
+				E978DD1A048A45DD882B511D /* OSUpdaterView.swift in Sources */,
+				A11B2C3D4E5F60718293A4B5 /* AppleIntelligenceEngine.swift in Sources */,
+				C11D2E3F405162738495B6C7 /* AppleIntelligenceView.swift in Sources */,
+				E11F3041526374859607D8E9 /* GlobalSmartScanEngine.swift in Sources */,
+);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CB183EF1905CA743711BDEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FCA660C58BB2A0FE72EB189 /* SystemOverviewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		859FE0FCA55DC059A118491C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B096F4D7B9B9EC1EC332953 /* VeltrixSecurity */;
+			targetProxy = DE455559445A5A5333615B3C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0963EA42F185CC04FF0E6DB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "arm64 x86_64";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Veltrix Security";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cynaxia.veltrixsecurity;
+				PRODUCT_NAME = VeltrixSecurity;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		89EF6A01746E4A06C00D5796 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cynaxia.veltrixsecurity;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9E744101838D93986895D561 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_NAME = VeltrixSecurityTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VeltrixSecurity.app/Contents/MacOS/VeltrixSecurity";
+			};
+			name = Debug;
+		};
+		B86850694B33034CD7051573 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "arm64 x86_64";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Veltrix Security";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cynaxia.veltrixsecurity;
+				PRODUCT_NAME = VeltrixSecurity;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		BAC4725D3CF47C8872706B18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cynaxia.veltrixsecurity;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EB255EB44AD02035CAB8406D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_NAME = VeltrixSecurityTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VeltrixSecurity.app/Contents/MacOS/VeltrixSecurity";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		34C84D505328DECFEBE6C201 /* Build configuration list for PBXProject "VeltrixSecurity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B86850694B33034CD7051573 /* Debug */,
+				0963EA42F185CC04FF0E6DB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		63EFB1AD1E6C888724325283 /* Build configuration list for PBXNativeTarget "VeltrixSecurityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E744101838D93986895D561 /* Debug */,
+				EB255EB44AD02035CAB8406D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B9C06B43478316015F9969C3 /* Build configuration list for PBXNativeTarget "VeltrixSecurity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89EF6A01746E4A06C00D5796 /* Debug */,
+				BAC4725D3CF47C8872706B18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B6C8351FBD2A9F32F8B6111 /* Project object */;
+}

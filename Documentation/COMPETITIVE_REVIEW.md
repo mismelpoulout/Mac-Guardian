@@ -1,18 +1,18 @@
 # Evaluación de CleanMyMac y herramientas abiertas
 
-**Revisado:** 2026-10-06. Esta revisión sirve para orientar producto y arquitectura de Mac Guardian; no es una auditoría de seguridad del código de terceros.
+**Revisado:** 2026-10-06. Esta revisión sirve para orientar producto y arquitectura de Veltrix Security; no es una auditoría de seguridad del código de terceros.
 
 ## Material encontrado en la raíz
 
 - `README 2.md` describe **CleanMyMac CLI**, la herramienta de terminal de MacPaw: análisis de disco, limpieza de cachés de herramientas de desarrollo, purga de artefactos de proyectos y acciones de optimización. Está marcada como beta pública.
 - Aunque su código está publicado en GitHub, CleanMyMac CLI **no es open source**: su licencia lo define como software propietario y limita el uso a fines personales no comerciales. Podemos aprender de las funciones y del flujo descrito; no debemos copiar ni reutilizar código, recursos o lógica protegida sin autorización.
-- `SECURITY.md` en la raíz es una política para reportar vulnerabilidades en repositorios de MacPaw, no la política de seguridad de Mac Guardian. No la interpreto como una decisión de producto nuestra.
+- `SECURITY.md` en la raíz es una política para reportar vulnerabilidades en repositorios de MacPaw, no la política de seguridad de Veltrix Security. No la interpreto como una decisión de producto nuestra.
 
 Fuentes: [README de CleanMyMac CLI](https://github.com/MacPaw/cleanmymac-cli), [licencia](https://github.com/MacPaw/cleanmymac-cli/blob/main/LICENSE), [Security Policy copiada](https://github.com/MacPaw/cleanmymac-cli/blob/main/SECURITY.md).
 
 El producto comercial CleanMyMac ofrece una superficie más amplia que el CLI. Su Smart Care coordina limpieza, protección, rendimiento, aplicaciones y My Clutter; sus herramientas incluyen desinstalación y actualización de apps, elementos de inicio, archivos grandes/antiguos y duplicados. Algunas capacidades varían según el canal de distribución. Esto ayuda a mapear expectativas del mercado, pero no significa que todas deban entrar en el MVP. Fuentes: [Smart Care](https://macpaw.com/support/cleanmymac/knowledgebase/smart-care), [catálogo de herramientas](https://macpaw.com/support/cleanmymac/knowledgebase/my-tools), [diferencias de la versión del App Store](https://macpaw.com/support/cleanmymac-x/knowledgebase/missing-features).
 
-## Ideas útiles para Mac Guardian
+## Ideas útiles para Veltrix Security
 
 ### Adoptar como principios de producto
 
@@ -39,11 +39,11 @@ Las prácticas descritas por [Purge](https://github.com/jithin-sabu/purge-app) s
 - Accesos rápidos de teclado y un flujo Smart Scan que coordine módulos sin esconder qué analizó ni qué propone.
 - Un auditor de protección que reporte estado observado y “desconocido” cuando una comprobación pública no alcance.
 
-[PureMac](https://github.com/momenbasel/PureMac) documenta límites honestos (por ejemplo, no prometer liberar espacio purgable ni “acelerar RAM”), tamaños asignados, exclusiones y revalidación de duplicados; su licencia declara MIT. [MyMacCleaner](https://github.com/Prot10/MyMacCleaner) sirve como referencia de superficie funcional y organización de módulos SwiftUI, pero su README también recomienda permitir una app bloqueada por Gatekeeper; Mac Guardian no debe seguir esa instrucción ni pedir que se debiliten protecciones.
+[PureMac](https://github.com/momenbasel/PureMac) documenta límites honestos (por ejemplo, no prometer liberar espacio purgable ni “acelerar RAM”), tamaños asignados, exclusiones y revalidación de duplicados; su licencia declara MIT. [MyMacCleaner](https://github.com/Prot10/MyMacCleaner) sirve como referencia de superficie funcional y organización de módulos SwiftUI, pero su README también recomienda permitir una app bloqueada por Gatekeeper; Veltrix Security no debe seguir esa instrucción ni pedir que se debiliten protecciones.
 
 ### No adoptar como comportamiento predeterminado
 
-- **Auto-limpieza programada, `--force` o borrado sin revisión.** CleanMyMac CLI documenta `--force`, y algunas apps permiten tareas automáticas. Mac Guardian requiere consentimiento informado y el proyecto prioriza control por operación.
+- **Auto-limpieza programada, `--force` o borrado sin revisión.** CleanMyMac CLI documenta `--force`, y algunas apps permiten tareas automáticas. Veltrix Security requiere consentimiento informado y el proyecto prioriza control por operación.
 - **Preseleccionar por edad.** La edad ayuda a ordenar, pero no prueba que un archivo se pueda borrar. Artefactos de un proyecto activo pueden seguir siendo necesarios.
 - **Promesas de RAM “liberada”, velocidad garantizada o espacio purgable recuperable.** Reportar observaciones medibles; no vender optimizaciones especulativas.
 - **Borrar historial, cookies, contraseñas, adjuntos u otros datos personales como “basura”.** Si se añade privacidad, cada dato debe ser opcional, identificable y revisable.

@@ -1,0 +1,165 @@
+VELTRIX SECURITY - REVISIÓN DEL CÓDIGO Y RECOMENDACIONES
+Fecha: 2026-10-11
+Alcance: lectura estática del código (VeltrixSecurityApp, ~7.700 líneas Swift), project.yml, Documentation/ y tests.
+IMPORTANTE: NO se pudo compilar ni ejecutar la app (disco lleno, 99%). Todo lo de abajo viene de leer el
+código, no de ejecutarlo. Los puntos marcados [VERIFICAR] hay que confirmarlos al compilar.
+
+======================================================================
+0. PRIMERO: LIBERAR ESPACIO EN DISCO
+======================================================================
+- El disco tiene ~160 MiB libres. Sin eso no se puede compilar ni probar nada.
+- Candidatos sin riesgo para el código: build_output/ (contiene MacGuardian.app antigua, dSYM, swiftmodule,
+  dmg_staging), build.log (130 KB), el binario suelto "main" (53 KB), ~/Library/Developer/Xcode/DerivedData,
+  simuladores de Xcode no usados. Revisa antes de borrar; yo no he borrado nada tuyo.
+- Añade a .gitignore: build_output/, build.log, main, xcuserdata/ (hoy aparecen como "sin seguimiento").
+
+======================================================================
+1. ERRORES PROBABLES QUE BLOQUEAN LA COMPILACIÓN  [VERIFICAR]
+======================================================================
+1.1 NotificationManager está declarada DOS veces:
+    - Core/NotificationManager.swift:5
+    - Core/TrashService.swift:95 (al final del archivo, con "Sendable")
+    Ambas están en el mismo target => "invalid redeclaration". Deja una sola (la de NotificationManager.swift)
+    y borra la copia de TrashService.swift. Ese archivo además no debería contener una clase de notificaciones.
+    Esta duplicación es anterior al renombrado a Veltrix Security.
+
+1.2 Estructuras duplicadas en SystemUtilityViews.swift (970 líneas) y archivos Core:
+    PrivacyScanner.swift y PerformanceMonitor.swift tienen definiciones paralelas a las que hay dentro de
+    SystemUtilityViews.swift (mismos conceptos: bundleIdentifier, cookies de Chrome/Brave, lista de
+    recientes, "automation" -> NSAppleEventsUsageDescription, notificación "subtitle: ...").
+    Si compilan, hay lógica duplicada; si no, es otro error de redeclaración. Mantén la lógica en Core/ y deja
+    solo las vistas en Views/.
+
+======================================================================
+2. FUNCIONES INACTIVAS O INCOMPLETAS (QUÉ ACTIVAR)
+======================================================================
+2.1 LIMPIEZA PROGRAMADA - hoy solo envía una notificación, no limpia nada
+    - ScheduledCleanupManager escribe un LaunchAgent con ProgramArguments [app, "--scheduled-cleanup"], pero
+      NINGÚN código lee ese argumento (no hay CommandLine.arguments en toda la app). Al llegar la hora, launchd
+      abre la app y no ocurre ninguna limpieza.
+    - La notificación de "Es hora de la limpieza automática" es solo un aviso.
+    ACTIVAR: en VeltrixSecurityApp.swift detectar "--scheduled-cleanup", ejecutar el motor de limpieza en
+    modo headless (solo categorías seguras, siempre a la Papelera), registrar resultado y notificar el total
+    liberado. Mantén la etiqueta com.cynaxia.macguardian.scheduledcleanup (ver sección 6).
+    También: "launchctl load -w" está deprecado; usar "launchctl bootstrap gui/<uid>" o, mejor, SMAppService
+    (macOS 13+) que es el método soportado y visible en Ajustes > Elementos de inicio.
+
+2.2 APPLE INTELLIGENCE - es heurística local + texto fijo, no usa Apple Intelligence real
+    - AppleIntelligenceEngine.runAnalysis() hace Task.sleep(250 ms) y reglas fijas (umbral >85 % de disco, etc.).
+      Las explicaciones de amenazas son plantillas de texto ("Configuración de inicio estándar...").
+    - La UI dice "Apple Intelligence"; conviene decir "análisis inteligente local" hasta que haya modelo real
+      (el README ya lo describe como modelos heurísticos locales: alinear la interfaz con eso).
+    ACTIVAR (opcional, macOS 26): usar el framework FoundationModels (modelo en el dispositivo) para redactar
+    las explicaciones, con comprobación de disponibilidad (SystemLanguageModel.default.availability) y la
+    heurística actual como respaldo. Nunca enviar rutas o nombres de archivo a servicios externos.
+
+2.3 SIRI / ATAJOS (App Intents)
+    - OptimizeStorageIntent solo llama a recordOptimizationComplete() y responde "ha optimizado el
+      almacenamiento": NO limpia nada. Es una respuesta falsa al usuario.
+    - RunSmartScanIntent ejecuta runAnalysis() pero no el escaneo global.
+    - speakSiriResponse() es "Siri simulation" (NSSpeechSynthesizer, deprecado) y AppleIntelligenceView ofrece
+      comandos de voz de demostración con sleeps de 800 ms.
+    ACTIVAR/CORREGIR: que cada intent invoque de verdad al motor (GlobalSmartScanEngine) y que el diálogo
+      informe el resultado real (bytes liberados, nº de elementos). Si no se puede hacer sin confirmación del
+      usuario, el intent debe abrir la app (openAppWhenRun ya está en true) y pedir confirmación.
+      Sustituir NSSpeechSynthesizer por AVSpeechSynthesizer. Declarar las frases de AppShortcutsProvider con
+      \(.applicationName) para que sigan funcionando con el nombre nuevo.
+
+2.4 PRIVACIDAD (PrivacyScanner)
+    - Por diseño no lee la base TCC (correcto y honesto). Lo que sí hace es listar apps y buscar cookies de
+      Chrome/Brave únicamente. ACTIVAR: soportar Safari, Firefox, Edge, Arc; mostrar nº de cookies solo si se
+      concede acceso (Safari exige Acceso total al disco: pedirlo con una guía hacia Ajustes del Sistema >
+      Privacidad y seguridad > Acceso total al disco, con botón que abra el panel).
+    - Sandbox/permisos: no hay entitlements (la app NO está en sandbox). Eso permite escanear, pero para
+      distribución (sección 5) hay que decidir y documentar el modelo de permisos.
+
+2.5 AMENAZAS (ThreatScanner)
+    - Es un auditor de elementos de persistencia con reglas heurísticas (rutas sospechosas, scripts ejecutables
+      en Application Support). No es un antivirus; el texto de la UI debe evitar prometer "protección".
+    ACTIVAR: comprobar firma de código (SecStaticCodeCreateWithPath / SecCodeCheckValidity), notarización y
+      cuarentena (com.apple.quarantine xattr) de cada agente; comparar LaunchAgents/Daemons contra la lista de
+      Elementos de inicio; mostrar el editor/firmante. Ampliar a: perfiles de configuración, extensiones del
+      navegador, login items con SMAppService, cron/at, DYLD_INSERT_LIBRARIES en plists.
+    - Añadir acción "Mover a la Papelera" para plists sospechosos sólo con confirmación y copia de respaldo.
+
+2.6 ACTUALIZADOR DE macOS (OSUpdaterFinder)
+    - Busca instaladores de macOS descargados para enviarlos a la Papelera. Funciona como limpieza; no
+      comprueba si hay una actualización del sistema disponible. ACTIVAR (opcional): mostrar la versión actual
+      y enlazar a Ajustes del Sistema > General > Actualización de software (x-apple.systempreferences:).
+
+2.7 LIMPIEZA GLOBAL (GlobalSmartScanEngine, 688 líneas) / AutoInspectionSheet (662 líneas)
+    - Tienen pasos con textos de progreso como "2/4 Analizando cachés..." y esperas fijas (Task.sleep 300-400 ms)
+      en el Dashboard y en AppleIntelligenceView para "dar sensación" de trabajo. Quitar esperas artificiales o
+      ligarlas a progreso real.
+    - Revisar que el total mostrado como "espacio liberable" sea el calculado, no estimado.
+    - Seguridad: confirmar que toda eliminación pasa por TrashService (Papelera) y que "Vaciar la Papelera" en
+      AutoInspectionSheet pide una confirmación explícita separada y solo vacía lo movido por la app.
+
+2.8 MONITOR DE RENDIMIENTO (PerformanceMonitor)
+    - Sondea cada 2 s (Task.sleep). Parar el sondeo cuando la ventana no está visible (scenePhase) para ahorrar
+      CPU/batería. Añadir histórico (gráfico) y alertas con umbral configurable.
+
+======================================================================
+3. LOCALIZACIÓN
+======================================================================
+- Localizable.xcstrings tiene en, es, ja, pt-BR, zh-Hans, pero los archivos nuevos (Threat, Privacy,
+  OSUpdater, ScheduledCleanup, AutoInspection, AppleIntelligence, Performance, GlobalSmartScan) usan texto en
+  español escrito directamente (p. ej. "Limpieza Programada", "Seleccionar todos") y cadenas de notificación
+  construidas en código. En otros idiomas se verán en español.
+- Acción: pasar esos textos a String(localized:)/LocalizedStringResource y completar el catálogo. Xcode puede
+  extraer las claves nuevas (Product > Export Localizations).
+- Las frases de Siri están en español fijo: localizarlas también.
+
+======================================================================
+4. CALIDAD, PRUEBAS Y ARQUITECTURA
+======================================================================
+- Pruebas: solo 1 archivo con 9 tests (SystemOverviewTests) que cubre scanner de carpetas y política de la
+  Papelera. Sin tests para ThreatScanner, PrivacyScanner, OSUpdaterFinder, ScheduledCleanupManager,
+  GlobalSmartScanEngine ni AppleIntelligenceEngine. Prioridad: tests de TrashService (rutas protegidas,
+  enlaces simbólicos) y de ThreatScanner (reglas) con carpetas temporales.
+- SystemUtilityViews.swift (970 líneas) mezcla varias vistas y modelos: dividir en un archivo por vista.
+- Logging: casi todo el código nuevo usa print(...) (NotificationManager). Sustituir por GuardianLogger
+  (os.Logger) que ya existe.
+- Swift 6: el proyecto declara SWIFT_VERSION 6.0; hay singletons @MainActor/Sendable mezclados (clase
+  "Sendable" con estado en NotificationManager). Revisar avisos de concurrencia al compilar.
+- Documentación: Documentation/ROADMAP.md dice que Fases 2-6 están parciales; los módulos nuevos (amenazas,
+  programación, Apple Intelligence) no aparecen. Actualizar ROADMAP/ARCHITECTURE/PERMISSIONS.
+- Los nombres internos MacGuardianError y GuardianLogger siguen con el nombre antiguo (se dejaron a propósito);
+  se pueden renombrar más adelante sin riesgo para el usuario.
+
+======================================================================
+5. DISTRIBUCIÓN Y FIRMA
+======================================================================
+- Firma automática, hardened runtime activado, sin entitlements ni Info.plist propio (GENERATE_INFOPLIST_FILE).
+- Pendiente para distribuir: Developer ID, notarización, ícono final, decisión sandbox sí/no. Sin sandbox no
+  se puede publicar en Mac App Store; con Developer ID + notarización sí se puede distribuir directamente.
+- Si se quiere escribir LaunchAgents desde la app, usar SMAppService en lugar de escribir en ~/Library/LaunchAgents.
+- Para notificaciones, la app debe estar firmada para que UNUserNotificationCenter funcione de forma fiable.
+- Probar siempre con la app copiada a /Applications: algunas funciones (login items, notificaciones) se
+  comportan distinto cuando se lanza desde DerivedData.
+
+======================================================================
+6. EFECTOS DEL CAMBIO DE NOMBRE A VELTRIX SECURITY (NO ES UN FALLO)
+======================================================================
+- Nuevo bundle ID: com.cynaxia.veltrixsecurity. Los UserDefaults (idioma, ajustes de limpieza programada) y los
+  permisos concedidos en Ajustes del Sistema se tratan como de una app nueva: hay que volver a concederlos.
+- Se mantuvieron con el nombre antiguo, a propósito: la clave de ajustes y la etiqueta del LaunchAgent
+  (com.cynaxia.macguardian.*) y los logs ~/Library/Logs/MacGuardian_cleanup*.log. Si quieres migrar a
+  veltrixsecurity, hay que hacerlo con una rutina que descargue el agente antiguo, copie los ajustes y cree el
+  nuevo. No lo hagas a mano.
+- ICONO: no hay un icono marcado como Veltrix. El catálogo (AppIcon + VeltrixSecurityLogo) conserva el logo
+  antiguo "M/G"; logo.jpg de la raíz es un icono nuevo (escudo con máscara) sin cambios aplicados. Confirma cuál
+  es el definitivo para generar los 10 tamaños de AppIcon (16-512 @1x/@2x) y el logo del sidebar.
+- build_output/MacGuardian.app y el módulo MacGuardian.swiftmodule son artefactos antiguos.
+
+======================================================================
+7. ORDEN SUGERIDO DE TRABAJO
+======================================================================
+ 1. Liberar espacio y compilar (sección 0). Corregir 1.1 y 1.2.
+ 2. Ejecutar los tests y ver los avisos de Swift 6.
+ 3. Hacer funcional la limpieza programada (2.1) y los App Intents (2.3), que hoy prometen más de lo que hacen.
+ 4. Quitar esperas artificiales y aclarar los textos de "Apple Intelligence" (2.2, 2.7).
+ 5. Localizar los textos nuevos (3).
+ 6. Reforzar ThreatScanner con firma/notarización (2.5) y ampliar PrivacyScanner (2.4).
+ 7. Tests, refactor de SystemUtilityViews, documentación (4).
+ 8. Icono definitivo, notarización y empaquetado (5, 6).

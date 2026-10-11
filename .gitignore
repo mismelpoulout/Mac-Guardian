@@ -1,7 +1,11 @@
 .DS_Store
 DerivedData/
 build/
+build_output/
+build.log
+main
+xcuserdata/
 
-# Local research attachments, not part of the Mac Guardian source tree.
+# Local research attachments, not part of the Veltrix Security source tree.
 /README 2.md
 /SECURITY.md

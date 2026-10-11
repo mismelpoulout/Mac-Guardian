@@ -1,4 +1,4 @@
-# Mac Guardian — Environment Audit
+# Veltrix Security — Environment Audit
 
 Audit performed 2026-10-06 in the supplied development environment.
 
@@ -57,7 +57,7 @@ Apple states free Apple Account holders can develop with Xcode and test locally;
 - Swift 6 strict concurrency may surface isolation diagnostics. Keep scanning off the main actor and use value types/actors when scanner work is introduced.
 - Storage figures can differ by filesystem/APFS accounting and privacy permissions; present the precise API meaning and unavailable states rather than extrapolated category totals.
 - The generated Release app was verified as a universal binary containing arm64 and x86_64 slices. Intel runtime testing still requires Intel hardware or a compatible CI host.
-- The name “Mac Guardian” and bundle ID are product inputs, not evidence of trademark availability or legal ownership.
+- The name “Veltrix Security” and bundle ID are product inputs, not evidence of trademark availability or legal ownership.
 
 ## Recommended architecture and roadmap
 
