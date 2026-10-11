@@ -1,22 +1,39 @@
-# Veltrix Security
+# Veltrix Security - Distribution
 
-Native macOS maintenance and diagnostics software by Cynaxia.
+Official distribution repository for Veltrix Security macOS application.
 
-Veltrix Security is local-first and privacy-first. The current app provides a system overview, cancellable folder-size and large-file scans, a developer-cache inventory, installed-app inventory, and a startup-item (`.plist`) audit. The Cleanup section lets the user review direct children of their own cache folder and explicitly move selected items to Trash. The Applications section can move eligible app bundles from `/Applications` or `~/Applications` to Trash; related support files are left untouched. Startup settings are read-only, and protected system apps cannot be moved. Privileged operations and deeper uninstall analysis are still planned work.
+## Downloads
 
-The interface supports Spanish by default, English, Brazilian Portuguese, Simplified Chinese, and Japanese. Its language preference is stored on this Mac. The app uses the supplied `logo.jpg` for its sidebar branding and application icon.
+- **VeltrixSecurity-1.0.0.dmg** - Latest stable release
 
-## Build
+## Installation
 
-Requirements: Xcode 26.6 or compatible Xcode with the macOS 14 SDK or newer, and XcodeGen.
+1. Download `VeltrixSecurity-1.0.0.dmg`
+2. Open the DMG file
+3. Drag `VeltrixSecurity.app` to `/Applications`
+4. Launch from Applications folder or Spotlight
 
-```sh
-xcodegen generate
-xcodebuild -project VeltrixSecurity.xcodeproj -scheme VeltrixSecurity -destination 'platform=macOS' build
-```
+## System Requirements
 
-Bundle identifier: `com.cynaxia.veltrixsecurity`. Deployment target: macOS 14.0.
+- macOS 14.0 or later
+- Apple Silicon (arm64) or Intel (x86_64)
+- 50 MB free disk space
 
-The interface supports Spanish (default), English, Brazilian Portuguese, Simplified Chinese, and Japanese. The language choice is saved on this Mac.
+## Features
 
-See [DEVELOPMENT.md](Documentation/DEVELOPMENT.md) for setup, [COMPETITIVE_REVIEW.md](Documentation/COMPETITIVE_REVIEW.md) for product research, and [ROADMAP.md](Documentation/ROADMAP.md) for phase boundaries.
+✅ Real Scheduled Cleanup  
+✅ Privacy Scanner (6+ browsers)  
+✅ Threat Analysis  
+✅ Performance Monitoring  
+✅ App Intents & Siri  
+✅ Menu Bar Integration  
+✅ 5 Languages Support  
+
+## Support
+
+For issues or feedback, contact the development team.
+
+---
+
+**Note:** This repository contains only compiled distributions.  
+For source code and development, see the private repository.

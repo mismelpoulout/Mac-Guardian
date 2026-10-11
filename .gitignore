@@ -1,11 +1,9 @@
-.DS_Store
-DerivedData/
-build/
-build_output/
-build.log
-main
-xcuserdata/
+# Ignore all files by default
+*
 
-# Local research attachments, not part of the Veltrix Security source tree.
-/README 2.md
-/SECURITY.md
+# But track the DMG and essential files
+!.gitignore
+!README.md
+!.github/
+!*.dmg
+!VeltrixSecurity-*.dmg
